@@ -1,53 +1,21 @@
-
 :root {
---primary: #2f6fed;
---bg-light: #f6f8fb;
---text-dark: #1f2933;
+
+
+.hero p {
+font-size: 1.1rem;
+max-width: 640px;
+margin-left: auto;
+margin-right: auto;
 }
 
 
-body {
-margin: 0;
-font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-color: var(--text-dark);
-background: #fff;
-}
-
-
-.container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 4rem 1.5rem;
-}
-
-
-.site-header {
-border-bottom: 1px solid #eee;
-}
-
-
-.nav {
-display: flex;
-justify-content: space-between;
-align-items: center;
-}
-
-
-.hero {
-background: var(--bg-light);
-text-align: center;
-}
-
-
-.hero h1 {
-font-size: 3rem;
-}
-
-
+/* BUTTONS */
 .btn {
-padding: 0.8rem 1.5rem;
-border-radius: 6px;
+display: inline-block;
+padding: 0.75rem 1.5rem;
+border-radius: 8px;
 text-decoration: none;
+font-weight: 600;
 }
 
 
@@ -60,19 +28,73 @@ color: #fff;
 .btn.secondary {
 border: 1px solid var(--primary);
 color: var(--primary);
+margin-left: 0.75rem;
 }
 
 
+/* GRID / CARDS */
 .grid-3 {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 2rem;
+grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+gap: 2.5rem;
 }
 
 
 .card {
 background: #fff;
-padding: 2rem;
-border-radius: 8px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+padding: 2.5rem;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+
+/* SPLIT SECTIONS */
+.split {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+align-items: center;
+}
+
+
+.mock {
+background: linear-gradient(135deg, #e5e7eb, #f3f4f6);
+border-radius: 12px;
+height: 260px;
+}
+
+
+/* SUITE CTA */
+.suite {
+background: var(--bg-light);
+text-align: center;
+}
+
+
+/* FOOTER */
+.site-footer {
+border-top: 1px solid #eee;
+text-align: center;
+padding: 2rem 1.5rem;
+font-size: 0.9rem;
+color: var(--text-muted);
+}
+
+
+/* MOBILE */
+@media (max-width: 768px) {
+.split {
+grid-template-columns: 1fr;
+}
+
+
+nav a {
+margin-left: 1rem;
+}
+
+
+.btn.secondary {
+margin-left: 0;
+margin-top: 0.75rem;
+}
 }
