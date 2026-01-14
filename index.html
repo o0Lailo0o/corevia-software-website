@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Corevia Software</title>
+  <title>Corevia Software - Moderne Business Software voor ZZP'ers</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
 <header class="header">
   <div class="container nav">
-    <div class="logo">Corevia</div>
+    <div class="logo">
+      <span class="logo-gradient">Corevia</span>
+    </div>
 
     <nav>
-      <a href="#">Home</a>
-      <a href="#">Apps</a>
-      <a href="#">Suite</a>
+      <a href="#" class="nav-link">Home</a>
+      <a href="#apps" class="nav-link">Apps</a>
+      <a href="#" class="nav-link">Suite</a>
     </nav>
 
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
@@ -28,70 +30,160 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-background"></div>
     <div class="container hero-content">
-      <h1>Moderne business software voor ZZP’ers</h1>
-      <p>
-        Contracten, facturen, registraties en documenten — los of als één suite.
+      <div class="hero-badge">✨ Nieuw: Corevia Suite 2.0</div>
+      <h1 class="hero-title">
+        Moderne business software<br/>
+        <span class="gradient-text">voor ZZP'ers</span>
+      </h1>
+      <p class="hero-description">
+        Contracten, facturen, registraties en documenten — los of als één suite.<br/>
+        Werk slimmer, niet harder.
       </p>
 
       <div class="hero-actions">
-        <a class="btn primary" href="#">Bekijk apps</a>
+        <a class="btn primary" href="#apps">
+          <span>Bekijk apps</span>
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </a>
         <a class="btn outline" href="#">Corevia Suite</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Tevreden gebruikers</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Tevredenheid</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Beschikbaar</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FEATURES -->
   <section class="features">
-    <div class="container grid-3">
-      <div class="feature-card">
-        <div class="icon">✔</div>
-        <h3>Administratie zonder stress</h3>
-        <p>Alles overzichtelijk en automatisch verwerkt.</p>
+    <div class="container">
+      <div class="section-header">
+        <h2>Waarom Corevia?</h2>
+        <p>Alles wat je nodig hebt om je administratie te stroomlijnen</p>
       </div>
+      
+      <div class="grid-3">
+        <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">✔</div>
+          </div>
+          <h3>Administratie zonder stress</h3>
+          <p>Alles overzichtelijk en automatisch verwerkt. Bespaar uren per week.</p>
+        </div>
 
-      <div class="feature-card">
-        <div class="icon">📄</div>
-        <h3>Grip op contracten</h3>
-        <p>Inzicht, controle en AI-ondersteuning.</p>
-      </div>
+        <div class="feature-card featured">
+          <div class="featured-badge">Populair</div>
+          <div class="icon-wrapper">
+            <div class="icon">📄</div>
+          </div>
+          <h3>Grip op contracten</h3>
+          <p>Inzicht, controle en AI-ondersteuning voor al je contracten.</p>
+        </div>
 
-      <div class="feature-card">
-        <div class="icon">⚡</div>
-        <h3>Documenten slim verwerkt</h3>
-        <p>Scan, herken en exporteer direct.</p>
+        <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">⚡</div>
+          </div>
+          <h3>Documenten slim verwerkt</h3>
+          <p>Scan, herken en exporteer direct. Volledig geautomatiseerd.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- APPS -->
-  <section class="apps">
+  <section class="apps" id="apps">
     <div class="container">
-      <h2>Apps</h2>
+      <div class="section-header">
+        <h2>Onze Apps</h2>
+        <p>Kies de apps die bij jouw workflow passen</p>
+      </div>
 
       <div class="grid-3">
         <div class="app-card">
+          <div class="app-icon">🧮</div>
           <h3>BTW-Aangifte Helper</h3>
-          <p>Ondersteuning en controle bij btw-aangifte.</p>
+          <p>Ondersteuning en controle bij btw-aangifte. Minder fouten, meer zekerheid.</p>
+          <ul class="app-features">
+            <li>Automatische controle</li>
+            <li>Foutdetectie</li>
+            <li>Export naar Belastingdienst</li>
+          </ul>
           <div class="app-footer">
-            <a class="btn outline" href="#">Bekijk app →</a>
+            <a class="btn outline" href="#">
+              Bekijk app 
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
           </div>
         </div>
 
         <div class="app-card">
+          <div class="app-icon">⏱️</div>
           <h3>Urenregistratie</h3>
-          <p>Registreer uren per project of klant.</p>
+          <p>Registreer uren per project of klant. Inzichtelijk en eenvoudig.</p>
+          <ul class="app-features">
+            <li>Project tracking</li>
+            <li>Rapportages</li>
+            <li>Factuur export</li>
+          </ul>
           <div class="app-footer">
-            <a class="btn outline" href="#">Bekijk app →</a>
+            <a class="btn outline" href="#">
+              Bekijk app 
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
           </div>
         </div>
 
         <div class="app-card">
+          <div class="app-icon">🚗</div>
           <h3>Ritten & Kilometerregistratie</h3>
-          <p>Ritten bijhouden voor belasting en administratie.</p>
+          <p>Ritten bijhouden voor belasting en administratie. GPS-nauwkeurig.</p>
+          <ul class="app-features">
+            <li>GPS tracking</li>
+            <li>Automatische registratie</li>
+            <li>Fiscaal conform</li>
+          </ul>
           <div class="app-footer">
-            <a class="btn outline" href="#">Bekijk app →</a>
+            <a class="btn outline" href="#">
+              Bekijk app 
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Klaar om te starten?</h2>
+        <p>Probeer Corevia 14 dagen gratis, zonder creditcard</p>
+        <div class="cta-actions">
+          <a class="btn primary large" href="#">Start gratis proefperiode</a>
+          <a class="btn outline large" href="#">Plan een demo</a>
         </div>
       </div>
     </div>
@@ -100,8 +192,36 @@
 </main>
 
 <footer class="footer">
-  <div class="container">
-    © 2026 Corevia Software
+  <div class="container footer-content">
+    <div class="footer-brand">
+      <div class="logo-gradient">Corevia</div>
+      <p>Moderne business software voor ZZP'ers</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-column">
+        <h4>Product</h4>
+        <a href="#">Apps</a>
+        <a href="#">Suite</a>
+        <a href="#">Prijzen</a>
+      </div>
+      <div class="footer-column">
+        <h4>Bedrijf</h4>
+        <a href="#">Over ons</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <a href="#">Documentatie</a>
+        <a href="#">FAQ</a>
+        <a href="#">Status</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      © 2026 Corevia Software. Alle rechten voorbehouden.
+    </div>
   </div>
 </footer>
 
@@ -109,19 +229,50 @@
   const toggle = document.getElementById("theme-toggle");
   const root = document.documentElement;
 
-  const saved = localStorage.getItem("theme");
-  if (saved) {
-    root.setAttribute("data-theme", saved);
-    toggle.textContent = saved === "dark" ? "☀️" : "🌙";
-  }
+  // Theme switcher - nu zonder localStorage
+  let currentTheme = root.getAttribute("data-theme") || "light";
+  toggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
 
   toggle.addEventListener("click", () => {
-    const current = root.getAttribute("data-theme");
-    const next = current === "dark" ? "light" : "dark";
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", currentTheme);
+    toggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+  });
 
-    root.setAttribute("data-theme", next);
-    localStorage.setItem("theme", next);
-    toggle.textContent = next === "dark" ? "☀️" : "🌙";
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && href.length > 1) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // Scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.feature-card, .app-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
   });
 </script>
 
