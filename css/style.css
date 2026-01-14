@@ -181,6 +181,24 @@ p {
   color: #4b5563;
 }
 
+.feature-card {
+  text-align: center;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  border-radius: 12px;
+  background: rgba(47,111,237,0.1);
+  color: var(--primary);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
