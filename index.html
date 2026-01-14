@@ -1,74 +1,104 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Corevia Software – Slimme business apps voor ZZP'ers</title>
-<link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corevia Software – Slimme software voor ZZP & MKB</title>
+
+  <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/" class="logo">Corevia Software</a>
 
-<header class="site-header">
-<div class="container nav">
-<div class="logo">Corevia</div>
-<nav>
-<a href="/">Home</a>
-<a href="/apps/">Apps</a>
-<a href="/suite/">Suite</a>
-</nav>
-</div>
-</header>
+      <nav>
+        <a href="#apps" class="btn secondary">Apps</a>
+        <a href="/suite/" class="btn primary">Corevia Suite</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container">
+      <h1>Professionele software voor ZZP & MKB</h1>
 
-<section class="hero">
-<div class="container">
-<h1>Moderne business software voor ZZP’ers</h1>
-<p>Contracten, facturen, registraties en documenten — los of als één suite.</p>
-<div class="cta">
-<a class="btn primary" href="/apps/">Bekijk apps</a>
-<a class="btn secondary" href="/suite/">Corevia Suite</a>
-</div>
-</div>
-</section>
+      <p>
+        Corevia Software biedt moderne, betrouwbare tools voor administratie,
+        compliance en automatisering. Gebruik losse apps of alles samen in één suite.
+      </p>
 
+      <div style="margin-top: 2rem;">
+        <a href="#apps" class="btn primary">Bekijk apps</a>
+        <a href="/suite/" class="btn secondary">Alles-in-één Suite</a>
+      </div>
+    </div>
+  </section>
 
-<section class="features">
-<div class="container grid-3">
-<div class="card">Administratie zonder stress</div>
-<div class="card">Grip op contracten</div>
-<div class="card">Documenten slim verwerkt</div>
-</div>
-</section>
+  <!-- ================= Apps ================= -->
+  <section id="apps" class="section">
+    <div class="container">
+      <h2>Onze Apps</h2>
+      <p>Kies één app of combineer ze in de Corevia Suite.</p>
 
+      <div class="grid-3">
 
-<section class="highlight">
-<div class="container split">
-<div>
-<h2>InvoiceGuard</h2>
-<p>Professioneel factureren en overzicht houden.</p>
-<a href="/apps/invoiceguard/">Bekijk app →</a>
-</div>
-<div class="mock"></div>
-</div>
-</section>
+        <div class="card">
+          <h3>InvoiceGuard</h3>
+          <p>Professioneel facturatiesysteem met overzicht, export en controle.</p>
+          <a href="/apps/invoiceguard/" class="btn secondary">Bekijk app</a>
+        </div>
 
+        <div class="card">
+          <h3>ContractGuard</h3>
+          <p>AI-analyse van contracten en voorwaarden, snel en betrouwbaar.</p>
+          <a href="/apps/contractguard/" class="btn secondary">Bekijk app</a>
+        </div>
 
-<section class="suite">
-<div class="container center">
-<h2>Alles in één: Corevia Suite</h2>
-<p>Bespaar tijd en geld met alle apps in één pakket.</p>
-<a class="btn primary" href="/suite/">Bekijk Suite</a>
-</div>
-</section>
+        <div class="card">
+          <h3>Document Scanner AI</h3>
+          <p>Scan documenten en haal automatisch relevante data eruit.</p>
+          <a href="/apps/document-scanner-ai/" class="btn secondary">Bekijk app</a>
+        </div>
 
+        <div class="card">
+          <h3>BTW Aangifte Helper</h3>
+          <p>Ondersteuning bij btw-aangifte met overzicht en foutcontrole.</p>
+          <a href="/apps/btw-aangifte-helper/" class="btn secondary">Bekijk app</a>
+        </div>
 
-<footer class="site-footer">
-<div class="container">
-© Corevia Software
-</div>
-</footer>
+        <div class="card">
+          <h3>Urenregistratie</h3>
+          <p>Houd uren bij per project, klant of periode.</p>
+          <a href="/apps/uren-registratie/" class="btn secondary">Bekijk app</a>
+        </div>
 
+        <div class="card">
+          <h3>Ritten & Kilometerregistratie</h3>
+          <p>Automatische en handmatige rittenregistratie voor belastingdoeleinden.</p>
+          <a href="/apps/ritten-kilometer-registratie/" class="btn secondary">
+            Bekijk app
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Footer ================= -->
+  <footer class="footer">
+    <p>
+      © <span id="year"></span> Corevia Software · Alle rechten voorbehouden
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
