@@ -1,130 +1,128 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Corevia Software – Moderne business software</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Corevia Software</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- ================= Header ================= -->
-<header class="site-header">
+<header class="header">
   <div class="container nav">
-    <a href="/" class="logo">Corevia</a>
+    <div class="logo">Corevia</div>
 
-    <nav class="nav-links">
-      <a href="#apps">Apps</a>
-      <a href="/suite/" class="btn primary">Suite</a>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Apps</a>
+      <a href="#">Suite</a>
     </nav>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      🌙
+    </button>
   </div>
 </header>
 
-<!-- ================= Hero ================= -->
-<section class="hero">
-  <div class="container">
-    <h1>Moderne business software voor ZZP’ers</h1>
+<main>
 
-    <p class="hero-sub">
-      Contracten, facturen, registraties en documenten — los of als één suite.
-    </p>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Moderne business software voor ZZP’ers</h1>
+      <p>
+        Contracten, facturen, registraties en documenten — los of als één suite.
+      </p>
 
-    <div class="hero-actions">
-      <a href="#apps" class="btn primary">Bekijk apps</a>
-      <a href="/suite/" class="btn secondary">Corevia Suite</a>
+      <div class="hero-actions">
+        <a class="btn primary" href="#">Bekijk apps</a>
+        <a class="btn outline" href="#">Corevia Suite</a>
+      </div>
     </div>
+  </section>
 
-    <div class="grid-3 hero-features">
-      <div class="card feature-card">
-        <div class="feature-icon">✓</div>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="container grid-3">
+      <div class="feature-card">
+        <div class="icon">✔</div>
         <h3>Administratie zonder stress</h3>
         <p>Alles overzichtelijk en automatisch verwerkt.</p>
       </div>
 
-      <div class="card feature-card">
-        <div class="feature-icon">📄</div>
+      <div class="feature-card">
+        <div class="icon">📄</div>
         <h3>Grip op contracten</h3>
         <p>Inzicht, controle en AI-ondersteuning.</p>
       </div>
 
-      <div class="card feature-card">
-        <div class="feature-icon">⚡</div>
+      <div class="feature-card">
+        <div class="icon">⚡</div>
         <h3>Documenten slim verwerkt</h3>
         <p>Scan, herken en exporteer direct.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= Apps ================= -->
-<section id="apps" class="section alt">
-  <div class="container">
-    <h2>Onze apps</h2>
-    <p>Kies losse tools of combineer alles in de Corevia Suite.</p>
+  <!-- APPS -->
+  <section class="apps">
+    <div class="container">
+      <h2>Apps</h2>
 
-    <div class="grid-3">
+      <div class="grid-3">
+        <div class="app-card">
+          <h3>BTW-Aangifte Helper</h3>
+          <p>Ondersteuning en controle bij btw-aangifte.</p>
+          <div class="app-footer">
+            <a class="btn outline" href="#">Bekijk app →</a>
+          </div>
+        </div>
 
-      <div class="card">
-        <h3>InvoiceGuard</h3>
-        <p>Professioneel factureren en overzicht houden.</p>
-        <a href="/apps/invoiceguard/" class="btn secondary card-cta">
-          Bekijk app →
-        </a>
+        <div class="app-card">
+          <h3>Urenregistratie</h3>
+          <p>Registreer uren per project of klant.</p>
+          <div class="app-footer">
+            <a class="btn outline" href="#">Bekijk app →</a>
+          </div>
+        </div>
+
+        <div class="app-card">
+          <h3>Ritten & Kilometerregistratie</h3>
+          <p>Ritten bijhouden voor belasting en administratie.</p>
+          <div class="app-footer">
+            <a class="btn outline" href="#">Bekijk app →</a>
+          </div>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>ContractGuard</h3>
-        <p>AI-analyse van contracten en voorwaarden.</p>
-        <a href="/apps/contractguard/" class="btn secondary card-cta">
-          Bekijk app →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Document Scanner AI</h3>
-        <p>Automatisch gegevens uit documenten halen.</p>
-        <a href="/apps/document-scanner-ai/" class="btn secondary card-cta">
-          Bekijk app →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>BTW-Aangifte Helper</h3>
-        <p>Ondersteuning en controle bij btw-aangifte.</p>
-        <a href="/apps/btw-aangifte-helper/" class="btn secondary card-cta">
-          Bekijk app →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Urenregistratie</h3>
-        <p>Registreer uren per project of klant.</p>
-        <a href="/apps/uren-registratie/" class="btn secondary card-cta">
-          Bekijk app →
-        </a>
-      </div>
-
-      <div class="card">
-        <h3>Ritten & Kilometerregistratie</h3>
-        <p>Ritten bijhouden voor belasting en administratie.</p>
-        <a href="/apps/ritten-kilometer-registratie/"
-           class="btn secondary card-cta">
-          Bekijk app →
-        </a>
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ================= Footer ================= -->
+</main>
+
 <footer class="footer">
-  <p>© <span id="year"></span> Corevia Software</p>
+  <div class="container">
+    © 2026 Corevia Software
+  </div>
 </footer>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  const saved = localStorage.getItem("theme");
+  if (saved) {
+    root.setAttribute("data-theme", saved);
+    toggle.textContent = saved === "dark" ? "☀️" : "🌙";
+  }
+
+  toggle.addEventListener("click", () => {
+    const current = root.getAttribute("data-theme");
+    const next = current === "dark" ? "light" : "dark";
+
+    root.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    toggle.textContent = next === "dark" ? "☀️" : "🌙";
+  });
 </script>
 
 </body>
