@@ -1559,3 +1559,22 @@ font-size: 0.9375rem;
   color: var(--text-muted);
   font-size: 0.9375rem;
 }
+
+/* Screenshot wrapper for app previews */
+.visual-screenshot-wrapper {
+  padding: 0;
+  background: var(--bg-soft);
+  overflow: hidden;
+}
+
+.visual-screenshot-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0 0 16px 16px;
+  transition: transform 0.3s ease;
+}
+
+.visual-card:hover .visual-screenshot-wrapper img {
+  transform: scale(1.02);
+}
