@@ -123,6 +123,14 @@ a {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card .btn {
+  margin-top: auto;
 }
 
 .card h3 {
@@ -131,6 +139,11 @@ a {
 
 .card p {
   color: #4b5563;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
 }
 
 /* ========== Features ========== */
