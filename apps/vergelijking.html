@@ -1,1 +1,498 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Background Vergelijking</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: #0f172a;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #94a3b8;
+      margin-bottom: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 2rem;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .option {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+
+    .option-title {
+      padding: 1rem;
+      background: #1e293b;
+      color: white;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 2rem 1.5rem;
+      min-height: 350px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Optie 1: Subtiele Gradient */
+    .opt1 {
+      background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 50%, #ffffff 100%);
+    }
+
+    .opt1::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      animation: float 20s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .opt1::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      left: -10%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+      animation: float 15s ease-in-out infinite reverse;
+      pointer-events: none;
+    }
+
+    /* Optie 2: Mesh Gradient */
+    .opt2 {
+      background: 
+        radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.1) 0px, transparent 50%),
+        radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.1) 0px, transparent 50%),
+        #ffffff;
+    }
+
+    /* Optie 3: Diagonale Strepen */
+    .opt3 {
+      background-color: #ffffff;
+      background-image: 
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 35px,
+          rgba(59, 130, 246, 0.03) 35px,
+          rgba(59, 130, 246, 0.03) 70px
+        );
+    }
+
+    .opt3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 100%);
+      pointer-events: none;
+    }
+
+    /* Optie 4: Glasmorphism */
+    .opt4 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+
+    .opt4::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .opt4 .content * {
+      color: white !important;
+    }
+
+    .opt4 .badge {
+      background: rgba(255, 255, 255, 0.2) !important;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      color: white !important;
+    }
+
+    .opt4 .gradient-text {
+      background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Optie 5: Animated Dots */
+    .opt5 {
+      background: #ffffff;
+    }
+
+    .opt5::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px);
+      background-size: 30px 30px;
+      opacity: 0.08;
+      animation: moveBackground 20s linear infinite;
+      pointer-events: none;
+    }
+
+    .opt5::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 150px;
+      background: linear-gradient(180deg, transparent 0%, #ffffff 100%);
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, 20px) scale(1.05); }
+    }
+
+    @keyframes moveBackground {
+      0% { background-position: 0 0; }
+      100% { background-position: 30px 30px; }
+    }
+
+    /* Content Styling */
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 500px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #0f172a;
+      margin-bottom: 1rem;
+    }
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      color: #0f172a;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+    }
+
+    .btn-outline {
+      border: 2px solid #3b82f6;
+      color: #3b82f6;
+      background: transparent;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(226, 232, 240, 0.6);
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 1.25rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 0.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎨 Hero Background Vergelijking</h1>
+  <p class="subtitle">Alle 5 opties naast elkaar</p>
+
+  <div class="grid">
+    
+    <!-- Optie 1 -->
+    <div class="option">
+      <div class="option-title">Optie 1: Subtiele Gradient</div>
+      <div class="hero opt1">
+        <div class="content">
+          <div class="badge">💼 6 Krachtige Apps</div>
+          <h2 class="title">
+            Kies de tools die<br/>
+            <span class="gradient-text">bij jou passen</span>
+          </h2>
+          <p class="description">
+            Gebruik individuele apps of combineer ze.
+          </p>
+          <div class="buttons">
+            <button class="btn btn-primary">Bekijk apps</button>
+            <button class="btn btn-outline">Probeer gratis</button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Apps</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">Offline</div>
+              <div class="stat-label">Altijd</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">14</div>
+              <div class="stat-label">Dagen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optie 2 -->
+    <div class="option">
+      <div class="option-title">Optie 2: Mesh Gradient</div>
+      <div class="hero opt2">
+        <div class="content">
+          <div class="badge">💼 6 Krachtige Apps</div>
+          <h2 class="title">
+            Kies de tools die<br/>
+            <span class="gradient-text">bij jou passen</span>
+          </h2>
+          <p class="description">
+            Gebruik individuele apps of combineer ze.
+          </p>
+          <div class="buttons">
+            <button class="btn btn-primary">Bekijk apps</button>
+            <button class="btn btn-outline">Probeer gratis</button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Apps</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">Offline</div>
+              <div class="stat-label">Altijd</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">14</div>
+              <div class="stat-label">Dagen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optie 3 -->
+    <div class="option">
+      <div class="option-title">Optie 3: Diagonale Strepen</div>
+      <div class="hero opt3">
+        <div class="content">
+          <div class="badge">💼 6 Krachtige Apps</div>
+          <h2 class="title">
+            Kies de tools die<br/>
+            <span class="gradient-text">bij jou passen</span>
+          </h2>
+          <p class="description">
+            Gebruik individuele apps of combineer ze.
+          </p>
+          <div class="buttons">
+            <button class="btn btn-primary">Bekijk apps</button>
+            <button class="btn btn-outline">Probeer gratis</button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Apps</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">Offline</div>
+              <div class="stat-label">Altijd</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">14</div>
+              <div class="stat-label">Dagen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optie 4 -->
+    <div class="option">
+      <div class="option-title">Optie 4: Glasmorphism (Premium)</div>
+      <div class="hero opt4">
+        <div class="content">
+          <div class="badge">💼 6 Krachtige Apps</div>
+          <h2 class="title">
+            Kies de tools die<br/>
+            <span class="gradient-text">bij jou passen</span>
+          </h2>
+          <p class="description">
+            Gebruik individuele apps of combineer ze.
+          </p>
+          <div class="buttons">
+            <button class="btn btn-primary">Bekijk apps</button>
+            <button class="btn btn-outline">Probeer gratis</button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Apps</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">Offline</div>
+              <div class="stat-label">Altijd</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">14</div>
+              <div class="stat-label">Dagen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optie 5 -->
+    <div class="option">
+      <div class="option-title">Optie 5: Animated Dots</div>
+      <div class="hero opt5">
+        <div class="content">
+          <div class="badge">💼 6 Krachtige Apps</div>
+          <h2 class="title">
+            Kies de tools die<br/>
+            <span class="gradient-text">bij jou passen</span>
+          </h2>
+          <p class="description">
+            Gebruik individuele apps of combineer ze.
+          </p>
+          <div class="buttons">
+            <button class="btn btn-primary">Bekijk apps</button>
+            <button class="btn btn-outline">Probeer gratis</button>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <div class="stat-number">6</div>
+              <div class="stat-label">Apps</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">Offline</div>
+              <div class="stat-label">Altijd</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number">14</div>
+              <div class="stat-label">Dagen</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
