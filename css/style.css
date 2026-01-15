@@ -1615,3 +1615,22 @@ font-size: 0.9375rem;
 .feature-card:hover .centered-icon {
   transform: scale(1.1) rotate(-5deg);
 }
+
+
+/* Centreer alleen de categorie iconen */
+.centered-icon {
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+/* Hover animatie voor categorie iconen */
+.feature-card:hover .centered-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* Zorg dat icon-wrapper ook de hover animatie krijgt */
+.icon-wrapper.centered-icon {
+  margin-left: auto;
+  margin-right: auto;
+}
