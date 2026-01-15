@@ -205,7 +205,7 @@ nav {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: 8rem 0 6rem;
+  padding: 4rem 0 6rem;
   background: var(--bg-gradient);
 }
 
@@ -259,6 +259,7 @@ nav {
   max-width: 900px;
   margin: 0 auto;
   animation: fadeInUp 0.8s ease;
+   padding-top: 2rem;
 }
 
 @keyframes fadeInUp {
