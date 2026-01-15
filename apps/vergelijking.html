@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero Backgrounds - Uitgebreide Collectie</title>
+  <title>Hero Backgrounds - Uitgebreide Collectie PLUS</title>
   <style>
     * {
       margin: 0;
@@ -72,7 +72,7 @@
       justify-content: center;
     }
 
-    /* ========== GEANIMEERDE BACKGROUNDS ========== */
+    /* ========== GEANIMEERDE BACKGROUNDS (ORIGINEEL) ========== */
 
     /* Optie 6: Gradient Wave */
     .opt6 {
@@ -194,7 +194,54 @@
       100% { background-position: 50px 50px; }
     }
 
-    /* ========== STATISCHE BACKGROUNDS ========== */
+    /* Optie 16: Aurora Effect */
+    .opt16 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+    }
+
+    .opt16::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: 
+        radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
+      animation: aurora 8s ease-in-out infinite;
+    }
+
+    @keyframes aurora {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+
+    /* Optie 19: Waves Animated */
+    .opt19 {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      position: relative;
+    }
+
+    .opt19::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,64 C200,100 400,20 600,64 C800,108 1000,28 1200,64 L1200,120 L0,120 Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E");
+      background-size: 1200px 120px;
+      animation: wavesMove 10s linear infinite;
+    }
+
+    @keyframes wavesMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 1200px 0; }
+    }
+
+    /* ========== STATISCHE BACKGROUNDS (ORIGINEEL) ========== */
 
     /* Optie 11: Soft Waves */
     .opt11 {
@@ -267,32 +314,6 @@
         );
     }
 
-    /* ========== EXTRA SPECIAAL ========== */
-
-    /* Optie 16: Aurora Effect (Animated) */
-    .opt16 {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      position: relative;
-    }
-
-    .opt16::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: 
-        radial-gradient(ellipse at top left, rgba(59, 130, 246, 0.3) 0%, transparent 50%),
-        radial-gradient(ellipse at bottom right, rgba(139, 92, 246, 0.3) 0%, transparent 50%);
-      animation: aurora 8s ease-in-out infinite;
-    }
-
-    @keyframes aurora {
-      0%, 100% { opacity: 0.5; transform: scale(1); }
-      50% { opacity: 0.8; transform: scale(1.1); }
-    }
-
     /* Optie 17: Hexagon Pattern */
     .opt17 {
       background: #ffffff;
@@ -305,29 +326,6 @@
         radial-gradient(circle at top left, #dbeafe 0%, transparent 50%),
         radial-gradient(circle at bottom right, #fce7f3 0%, transparent 50%),
         #ffffff;
-    }
-
-    /* Optie 19: Waves Animated */
-    .opt19 {
-      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-      position: relative;
-    }
-
-    .opt19::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 200px;
-      background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,64 C200,100 400,20 600,64 C800,108 1000,28 1200,64 L1200,120 L0,120 Z' fill='white' fill-opacity='0.3'/%3E%3C/svg%3E");
-      background-size: 1200px 120px;
-      animation: wavesMove 10s linear infinite;
-    }
-
-    @keyframes wavesMove {
-      0% { background-position: 0 0; }
-      100% { background-position: 1200px 0; }
     }
 
     /* Optie 20: Checkered Fade */
@@ -351,6 +349,7 @@
       bottom: 0;
       background: linear-gradient(180deg, transparent 0%, rgba(248, 250, 252, 0.9) 100%);
     }
+
     /* ========== NIEUWE GEANIMEERDE BACKGROUNDS ========== */
 
     /* Optie 21: Rotating Gradient Ring */
@@ -377,34 +376,6 @@
     @keyframes rotateRing {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
-    }
-
-    .opt21 .badge {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: white;
-    }
-
-    .opt21 .content * {
-      color: white !important;
-    }
-
-    .opt21 .gradient-text {
-      background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .opt21 .btn-primary {
-      background: white;
-      color: #0f172a;
-    }
-
-    .opt21 .btn-outline {
-      border-color: white;
-      color: white;
     }
 
     /* Optie 22: Particle Float */
@@ -450,34 +421,6 @@
       66% { transform: translate(30px, 60px); opacity: 0.5; }
     }
 
-    .opt22 .badge {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: white;
-    }
-
-    .opt22 .content * {
-      color: white !important;
-    }
-
-    .opt22 .gradient-text {
-      background: linear-gradient(135deg, #93c5fd 0%, #c4b5fd 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .opt22 .btn-primary {
-      background: white;
-      color: #1e3a8a;
-    }
-
-    .opt22 .btn-outline {
-      border-color: white;
-      color: white;
-    }
-
     /* Optie 23: Diagonal Scan */
     .opt23 {
       background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
@@ -504,34 +447,6 @@
     @keyframes diagonalScan {
       0% { transform: translate(-100%, -100%); }
       100% { transform: translate(100%, 100%); }
-    }
-
-    .opt23 .badge {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: white;
-    }
-
-    .opt23 .content * {
-      color: white !important;
-    }
-
-    .opt23 .gradient-text {
-      background: linear-gradient(135deg, #e0f2fe 0%, #ffffff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .opt23 .btn-primary {
-      background: white;
-      color: #0891b2;
-    }
-
-    .opt23 .btn-outline {
-      border-color: white;
-      color: white;
     }
 
     /* Optie 24: Morph Blob */
@@ -569,34 +484,6 @@
         border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
         transform: rotate(270deg);
       }
-    }
-
-    .opt24 .badge {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: white;
-    }
-
-    .opt24 .content * {
-      color: white !important;
-    }
-
-    .opt24 .gradient-text {
-      background: linear-gradient(135deg, #fce7f3 0%, #ffffff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .opt24 .btn-primary {
-      background: white;
-      color: #ec4899;
-    }
-
-    .opt24 .btn-outline {
-      border-color: white;
-      color: white;
     }
 
     /* Optie 25: Zoom Pulse */
@@ -643,34 +530,6 @@
         transform: scale(2.5);
         opacity: 0;
       }
-    }
-
-    .opt25 .badge {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      color: white;
-    }
-
-    .opt25 .content * {
-      color: white !important;
-    }
-
-    .opt25 .gradient-text {
-      background: linear-gradient(135deg, #ccfbf1 0%, #ffffff 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .opt25 .btn-primary {
-      background: white;
-      color: #14b8a6;
-    }
-
-    .opt25 .btn-outline {
-      border-color: white;
-      color: white;
     }
 
     /* ========== NIEUWE STATISCHE BACKGROUNDS ========== */
@@ -806,15 +665,6 @@
       filter: blur(40px);
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-
     /* Content Styling */
     .content {
       position: relative;
@@ -837,18 +687,21 @@
     }
 
     /* Speciale badges voor gekleurde backgrounds */
-    .opt6 .badge, .opt7 .badge, .opt8 .badge, .opt9 .badge, .opt16 .badge, .opt19 .badge {
+    .opt6 .badge, .opt7 .badge, .opt8 .badge, .opt9 .badge, .opt16 .badge, .opt19 .badge,
+    .opt21 .badge, .opt22 .badge, .opt23 .badge, .opt24 .badge, .opt25 .badge {
       background: rgba(255, 255, 255, 0.25);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.4);
       color: white;
     }
 
-    .opt6 .content *, .opt7 .content *, .opt8 .content *, .opt9 .content *, .opt16 .content *, .opt19 .content * {
+    .opt6 .content *, .opt7 .content *, .opt8 .content *, .opt9 .content *, .opt16 .content *, .opt19 .content *,
+    .opt21 .content *, .opt22 .content *, .opt23 .content *, .opt24 .content *, .opt25 .content * {
       color: white !important;
     }
 
-    .opt6 .gradient-text, .opt7 .gradient-text, .opt8 .gradient-text, .opt9 .gradient-text, .opt16 .gradient-text, .opt19 .gradient-text {
+    .opt6 .gradient-text, .opt7 .gradient-text, .opt8 .gradient-text, .opt9 .gradient-text, .opt16 .gradient-text, .opt19 .gradient-text,
+    .opt21 .gradient-text, .opt22 .gradient-text, .opt23 .gradient-text, .opt24 .gradient-text, .opt25 .gradient-text {
       background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -895,691 +748,686 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-      color: white;
-      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-    }
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
 
-    .btn-outline {
-      border: 2px solid #3b82f6;
-      color: #3b82f6;
-      background: transparent;
-    }
+.btn-outline {
+  border: 2px solid #3b82f6;
+  color: #3b82f6;
+  background: transparent;
+}
 
-    /* Witte knoppen voor donkere backgrounds */
-    .opt6 .btn-primary, .opt7 .btn-primary, .opt8 .btn-primary, .opt9 .btn-primary, .opt16 .btn-primary, .opt19 .btn-primary {
-      background: white;
-      color: #667eea;
-    }
+/* Witte knoppen voor donkere backgrounds */
+.opt6 .btn-primary, .opt7 .btn-primary, .opt8 .btn-primary, .opt9 .btn-primary, .opt16 .btn-primary, .opt19 .btn-primary,
+.opt21 .btn-primary, .opt22 .btn-primary, .opt23 .btn-primary, .opt24 .btn-primary, .opt25 .btn-primary {
+  background: white;
+  color: #667eea;
+}
 
-    .opt6 .btn-outline, .opt7 .btn-outline, .opt8 .btn-outline, .opt9 .btn-outline, .opt16 .btn-outline, .opt19 .btn-outline {
-      border-color: white;
-      color: white;
-    }
+.opt6 .btn-outline, .opt7 .btn-outline, .opt8 .btn-outline, .opt9 .btn-outline, .opt16 .btn-outline, .opt19 .btn-outline,
+.opt21 .btn-outline, .opt22 .btn-outline, .opt23 .btn-outline, .opt24 .btn-outline, .opt25 .btn-outline {
+  border-color: white;
+  color: white;
+}
 
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
 <body>
-  <h1>🎨 Hero Backgrounds - Complete Collectie</h1>
-  <p class="subtitle">15 extra opties: 10 geanimeerd + 5 statisch</p>
-
-  <h2 class="section-title">✨ Geanimeerde Backgrounds</h2>
+  <h1>🎨 Hero Backgrounds - Complete Collectie PLUS</h1>
+  <p class="subtitle">30 opties: 15 origineel + 15 nieuwe designs</p>
+  <h2 class="section-title">✨ Geanimeerde Backgrounds (Origineel)</h2>
   <div class="grid">
-    
+
     <!-- Optie 6 -->
-    <div class="option">
-      <div class="option-title">Optie 6: Gradient Wave</div>
-      <div class="hero opt6">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
+<div class="option">
+  <div class="option-title">Optie 6: Gradient Wave</div>
+  <div class="hero opt6">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
       </div>
     </div>
-
-    <!-- Optie 7 -->
-    <div class="option">
-      <div class="option-title">Optie 7: Floating Squares</div>
-      <div class="hero opt7">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 8 -->
-    <div class="option">
-      <div class="option-title">Optie 8: Pulsing Circles</div>
-      <div class="hero opt8">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 9 -->
-    <div class="option">
-      <div class="option-title">Optie 9: Sliding Gradient</div>
-      <div class="hero opt9">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 10 -->
-    <div class="option">
-      <div class="option-title">Optie 10: Grid Pattern Animated</div>
-      <div class="hero opt10">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 16 -->
-    <div class="option">
-      <div class="option-title">Optie 16: Aurora Effect</div>
-      <div class="hero opt16">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 19 -->
-    <div class="option">
-      <div class="option-title">Optie 19: Waves Animated</div>
-      <div class="hero opt19">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+</div>
 
-  <h2 class="section-title">🎯 Statische Backgrounds</h2>
+<!-- Optie 7 -->
+<div class="option">
+  <div class="option-title">Optie 7: Floating Squares</div>
+  <div class="hero opt7">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 8 -->
+<div class="option">
+  <div class="option-title">Optie 8: Pulsing Circles</div>
+  <div class="hero opt8">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 9 -->
+<div class="option">
+  <div class="option-title">Optie 9: Sliding Gradient</div>
+  <div class="hero opt9">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 10 -->
+<div class="option">
+  <div class="option-title">Optie 10: Grid Pattern Animated</div>
+  <div class="hero opt10">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 16 -->
+<div class="option">
+  <div class="option-title">Optie 16: Aurora Effect</div>
+  <div class="hero opt16">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 19 -->
+<div class="option">
+  <div class="option-title">Optie 19: Waves Animated</div>
+  <div class="hero opt19">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  <h2 class="section-title">🎯 Statische Backgrounds (Origineel)</h2>
   <div class="grid">
 
     <!-- Optie 11 -->
-    <div class="option">
-      <div class="option-title">Optie 11: Soft Waves</div>
-      <div class="hero opt11">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 12 -->
-    <div class="option">
-      <div class="option-title">Optie 12: Subtle Noise</div>
-      <div class="hero opt12">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 13 -->
-    <div class="option">
-      <div class="option-title">Optie 13: Geometric Shapes</div>
-      <div class="hero opt13">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 14 -->
-    <div class="option">
-      <div class="option-title">Optie 14: Layered Gradient</div>
-      <div class="hero opt14">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 15 -->
-    <div class="option">
-      <div class="option-title">Optie 15: Horizontal Stripes</div>
-      <div class="hero opt15">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 17 -->
-    <div class="option">
-      <div class="option-title">Optie 17: Hexagon Pattern</div>
-      <div class="hero opt17">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 18 -->
-    <div class="option">
-      <div class="option-title">Optie 18: Corner Gradient</div>
-      <div class="hero opt18">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 20-->
 <div class="option">
-<div class="option-title">Optie 20: Checkered Fade</div>
-<div class="hero opt20">
-<div class="content">
-<div class="badge">💼 6 Krachtige Apps</div>
-<h2 class="title">
-Kies de tools die<br/>
-<span class="gradient-text">bij jou passen</span>
-</h2>
-<p class="description">
-Gebruik individuele apps of combineer ze.
-</p>
-<div class="buttons">
-<button class="btn btn-primary">Bekijk apps</button>
-<button class="btn btn-outline">Probeer gratis</button>
-</div>
-</div>
-</div>
-</div>
-    <body>
-  <h1>🎨 Hero Backgrounds - Complete Collectie PLUS</h1>
-  <p class="subtitle">25 extra nieuwe opties toegevoegd!</p>
-
-  <h2 class="section-title">✨ Nieuwe Geanimeerde Backgrounds</h2>
-  <div class="grid">
-    
-    <!-- Optie 21 -->
-    <div class="option">
-      <div class="option-title">Optie 21: Rotating Gradient Ring</div>
-      <div class="hero opt21">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
+  <div class="option-title">Optie 11: Soft Waves</div>
+  <div class="hero opt11">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
       </div>
     </div>
-
-    <!-- Optie 22 -->
-    <div class="option">
-      <div class="option-title">Optie 22: Particle Float</div>
-      <div class="hero opt22">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 23 -->
-    <div class="option">
-      <div class="option-title">Optie 23: Diagonal Scan</div>
-      <div class="hero opt23">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 24 -->
-    <div class="option">
-      <div class="option-title">Optie 24: Morph Blob</div>
-      <div class="hero opt24">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 25 -->
-    <div class="option">
-      <div class="option-title">Optie 25: Zoom Pulse</div>
-      <div class="hero opt25">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+</div>
 
-  <h2 class="section-title">🎯 Nieuwe Statische Backgrounds</h2>
+<!-- Optie 12 -->
+<div class="option">
+  <div class="option-title">Optie 12: Subtle Noise</div>
+  <div class="hero opt12">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 13 -->
+<div class="option">
+  <div class="option-title">Optie 13: Geometric Shapes</div>
+  <div class="hero opt13">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 14 -->
+<div class="option">
+  <div class="option-title">Optie 14: Layered Gradient</div>
+  <div class="hero opt14">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 15 -->
+<div class="option">
+  <div class="option-title">Optie 15: Horizontal Stripes</div>
+  <div class="hero opt15">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 17 -->
+<div class="option">
+  <div class="option-title">Optie 17: Hexagon Pattern</div>
+  <div class="hero opt17">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 18 -->
+<div class="option">
+  <div class="option-title">Optie 18: Corner Gradient</div>
+  <div class="hero opt18">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 20 -->
+<div class="option">
+  <div class="option-title">Optie 20: Checkered Fade</div>
+  <div class="hero opt20">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  <h2 class="section-title">🚀 Nieuwe Geanimeerde Backgrounds</h2>
+  <div class="grid">
+
+    <!-- Optie 21 -->
+<div class="option">
+  <div class="option-title">Optie 21: Rotating Gradient Ring</div>
+  <div class="hero opt21">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 22 -->
+<div class="option">
+  <div class="option-title">Optie 22: Particle Float</div>
+  <div class="hero opt22">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 23 -->
+<div class="option">
+  <div class="option-title">Optie 23: Diagonal Scan</div>
+  <div class="hero opt23">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 24 -->
+<div class="option">
+  <div class="option-title">Optie 24: Morph Blob</div>
+  <div class="hero opt24">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 25 -->
+<div class="option">
+  <div class="option-title">Optie 25: Zoom Pulse</div>
+  <div class="hero opt25">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  <h2 class="section-title">🎨 Nieuwe Statische Backgrounds</h2>
   <div class="grid">
 
     <!-- Optie 26 -->
-    <div class="option">
-      <div class="option-title">Optie 26: Dotted Grid</div>
-      <div class="hero opt26">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
+<div class="option">
+  <div class="option-title">Optie 26: Dotted Grid</div>
+  <div class="hero opt26">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
       </div>
     </div>
-
-    <!-- Optie 27 -->
-    <div class="option">
-      <div class="option-title">Optie 27: Diagonal Lines</div>
-      <div class="hero opt27">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 28 -->
-    <div class="option">
-      <div class="option-title">Optie 28: Concentric Circles</div>
-      <div class="hero opt28">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 29 -->
-    <div class="option">
-      <div class="option-title">Optie 29: Mesh Gradient</div>
-      <div class="hero opt29">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 30 -->
-    <div class="option">
-      <div class="option-title">Optie 30: Cross Pattern</div>
-      <div class="hero opt30">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 31 -->
-    <div class="option">
-      <div class="option-title">Optie 31: Zigzag Pattern</div>
-      <div class="hero opt31">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 32 -->
-    <div class="option">
-      <div class="option-title">Optie 32: Soft Radial</div>
-      <div class="hero opt32">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 33 -->
-    <div class="option">
-      <div class="option-title">Optie 33: Diamond Pattern</div>
-      <div class="hero opt33">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 34 -->
-    <div class="option">
-      <div class="option-title">Optie 34: Triangular Mesh</div>
-      <div class="hero opt34">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Optie 35 -->
-    <div class="option">
-      <div class="option-title">Optie 35: Gradient Orbs</div>
-      <div class="hero opt35">
-        <div class="content">
-          <div class="badge">💼 6 Krachtige Apps</div>
-          <h2 class="title">
-            Kies de tools die<br/>
-            <span class="gradient-text">bij jou passen</span>
-          </h2>
-          <p class="description">
-            Gebruik individuele apps of combineer ze.
-          </p>
-          <div class="buttons">
-            <button class="btn btn-primary">Bekijk apps</button>
-            <button class="btn btn-outline">Probeer gratis</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
-</body>
-</html>
+</div>
+
+<!-- Optie 27 -->
+<div class="option">
+  <div class="option-title">Optie 27: Diagonal Lines</div>
+  <div class="hero opt27">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
   </div>
+</div>
+
+<!-- Optie 28 -->
+<div class="option">
+  <div class="option-title">Optie 28: Concentric Circles</div>
+  <div class="hero opt28">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 29 -->
+<div class="option">
+  <div class="option-title">Optie 29: Mesh Gradient</div>
+  <div class="hero opt29">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 30 -->
+<div class="option">
+  <div class="option-title">Optie 30: Cross Pattern</div>
+  <div class="hero opt30">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 31 -->
+<div class="option">
+  <div class="option-title">Optie 31: Zigzag Pattern</div>
+  <div class="hero opt31">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 32 -->
+<div class="option">
+  <div class="option-title">Optie 32: Soft Radial</div>
+  <div class="hero opt32">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 33 -->
+<div class="option">
+  <div class="option-title">Optie 33: Diamond Pattern</div>
+  <div class="hero opt33">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 34 -->
+<div class="option">
+  <div class="option-title">Optie 34: Triangular Mesh</div>
+  <div class="hero opt34">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optie 35 -->
+<div class="option">
+  <div class="option-title">Optie 35: Gradient Orbs</div>
+  <div class="hero opt35">
+    <div class="content">
+      <div class="badge">💼 6 Krachtige Apps</div>
+      <h2 class="title">
+        Kies de tools die<br/>
+        <span class="gradient-text">bij jou passen</span>
+      </h2>
+      <p class="description">
+        Gebruik individuele apps of combineer ze.
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">Bekijk apps</button>
+        <button class="btn btn-outline">Probeer gratis</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
 </body>
 </html>
