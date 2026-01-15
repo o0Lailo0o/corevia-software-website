@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="nl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero Background Vergelijking</title>
+  <title>Hero Background Vergelijking - Met Animaties</title>
   <style>
     * {
       margin: 0;
@@ -65,7 +64,7 @@
       justify-content: center;
     }
 
-    /* Optie 1: Subtiele Gradient */
+    /* Optie 1: Subtiele Gradient MET ZICHTBARE ANIMATIE */
     .opt1 {
       background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 50%, #ffffff 100%);
     }
@@ -77,8 +76,8 @@
       right: -10%;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-      animation: float 20s ease-in-out infinite;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
+      animation: float1 8s ease-in-out infinite;
       pointer-events: none;
     }
 
@@ -89,9 +88,31 @@
       left: -10%;
       width: 350px;
       height: 350px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
-      animation: float 15s ease-in-out infinite reverse;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
+      animation: float2 6s ease-in-out infinite;
       pointer-events: none;
+    }
+
+    @keyframes float1 {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      50% { 
+        transform: translate(40px, 30px) scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    @keyframes float2 {
+      0%, 100% { 
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+      }
+      50% { 
+        transform: translate(-30px, -40px) scale(1.15);
+        opacity: 0.7;
+      }
     }
 
     /* Optie 2: Mesh Gradient */
@@ -107,7 +128,7 @@
         #ffffff;
     }
 
-    /* Optie 3: Diagonale Strepen */
+    /* Optie 3: Diagonale Strepen MET DUIDELIJKER PATROON */
     .opt3 {
       background-color: #ffffff;
       background-image: 
@@ -115,8 +136,8 @@
           45deg,
           transparent,
           transparent 35px,
-          rgba(59, 130, 246, 0.03) 35px,
-          rgba(59, 130, 246, 0.03) 70px
+          rgba(59, 130, 246, 0.08) 35px,
+          rgba(59, 130, 246, 0.08) 70px
         );
     }
 
@@ -127,7 +148,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 100%);
       pointer-events: none;
     }
 
@@ -167,7 +188,7 @@
       background-clip: text;
     }
 
-    /* Optie 5: Animated Dots */
+    /* Optie 5: Animated Dots MET ZICHTBARE ANIMATIE */
     .opt5 {
       background: #ffffff;
     }
@@ -179,10 +200,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: radial-gradient(circle, #3b82f6 1.5px, transparent 1.5px);
-      background-size: 30px 30px;
-      opacity: 0.08;
-      animation: moveBackground 20s linear infinite;
+      background-image: radial-gradient(circle, #3b82f6 2px, transparent 2px);
+      background-size: 40px 40px;
+      opacity: 0.15;
+      animation: moveDots 15s linear infinite;
       pointer-events: none;
     }
 
@@ -197,14 +218,13 @@
       pointer-events: none;
     }
 
-    @keyframes float {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(30px, 20px) scale(1.05); }
-    }
-
-    @keyframes moveBackground {
-      0% { background-position: 0 0; }
-      100% { background-position: 30px 30px; }
+    @keyframes moveDots {
+      0% { 
+        background-position: 0 0;
+      }
+      100% { 
+        background-position: 40px 40px;
+      }
     }
 
     /* Content Styling */
@@ -305,6 +325,26 @@
       margin-top: 0.2rem;
     }
 
+    /* Animatie indicatoren */
+    .animation-indicator {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: rgba(34, 197, 94, 0.9);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      z-index: 100;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
+    }
+
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: 1fr;
@@ -314,7 +354,7 @@
 </head>
 <body>
   <h1>🎨 Hero Background Vergelijking</h1>
-  <p class="subtitle">Alle 5 opties naast elkaar</p>
+  <p class="subtitle">Let op de animaties! (Groene badges tonen geanimeerde opties)</p>
 
   <div class="grid">
     
@@ -322,6 +362,7 @@
     <div class="option">
       <div class="option-title">Optie 1: Subtiele Gradient</div>
       <div class="hero opt1">
+        <div class="animation-indicator">🎬 ANIMATED</div>
         <div class="content">
           <div class="badge">💼 6 Krachtige Apps</div>
           <h2 class="title">
@@ -462,6 +503,7 @@
     <div class="option">
       <div class="option-title">Optie 5: Animated Dots</div>
       <div class="hero opt5">
+        <div class="animation-indicator">🎬 ANIMATED</div>
         <div class="content">
           <div class="badge">💼 6 Krachtige Apps</div>
           <h2 class="title">
