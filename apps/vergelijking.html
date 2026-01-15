@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hero Background Vergelijking - Met Animaties</title>
+  <title>Hero Background Opties - Optimale Zichtbaarheid</title>
   <style>
     * {
       margin: 0;
@@ -64,80 +64,78 @@
       justify-content: center;
     }
 
-    /* Optie 1: Subtiele Gradient MET ZICHTBARE ANIMATIE */
+    /* Optie 1: Subtiele Gradient - BETER ZICHTBAAR */
     .opt1 {
-      background: linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 50%, #ffffff 100%);
+      background: linear-gradient(180deg, #dbeafe 0%, #bfdbfe 50%, #e0f2fe 100%);
     }
 
     .opt1::before {
       content: '';
       position: absolute;
-      top: -20%;
-      right: -10%;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
-      animation: float1 8s ease-in-out infinite;
+      top: -10%;
+      right: 5%;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(59, 130, 246, 0.15) 40%, transparent 70%);
+      border-radius: 50%;
+      animation: float1 6s ease-in-out infinite;
       pointer-events: none;
     }
 
     .opt1::after {
       content: '';
       position: absolute;
-      bottom: -20%;
-      left: -10%;
-      width: 350px;
-      height: 350px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.2) 0%, transparent 70%);
-      animation: float2 6s ease-in-out infinite;
+      bottom: -10%;
+      left: 5%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0.12) 40%, transparent 70%);
+      border-radius: 50%;
+      animation: float2 5s ease-in-out infinite;
       pointer-events: none;
     }
 
     @keyframes float1 {
       0%, 100% { 
         transform: translate(0, 0) scale(1);
-        opacity: 1;
       }
       50% { 
         transform: translate(40px, 30px) scale(1.1);
-        opacity: 0.8;
       }
     }
 
     @keyframes float2 {
       0%, 100% { 
         transform: translate(0, 0) scale(1);
-        opacity: 1;
       }
       50% { 
-        transform: translate(-30px, -40px) scale(1.15);
-        opacity: 0.7;
+        transform: translate(-35px, -25px) scale(1.15);
       }
     }
 
-    /* Optie 2: Mesh Gradient */
+    /* Optie 2: Mesh Gradient - STERKER */
     .opt2 {
       background: 
-        radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%),
-        radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.1) 0px, transparent 50%),
-        radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 0.1) 0px, transparent 50%),
-        radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 0.1) 0px, transparent 50%),
-        radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.1) 0px, transparent 50%),
-        radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.1) 0px, transparent 50%),
-        radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.1) 0px, transparent 50%),
-        #ffffff;
+        radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.18) 0px, transparent 50%),
+        radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.18) 0px, transparent 50%),
+        radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 0.18) 0px, transparent 50%),
+        radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 0.18) 0px, transparent 50%),
+        radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.18) 0px, transparent 50%),
+        radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.18) 0px, transparent 50%),
+        radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.18) 0px, transparent 50%),
+        #f8fafc;
     }
 
-    /* Optie 3: Diagonale Strepen MET DUIDELIJKER PATROON */
+    /* Optie 3: Diagonale Strepen - VEEL DUIDELIJKER */
     .opt3 {
-      background-color: #ffffff;
+      background-color: #f8fafc;
       background-image: 
         repeating-linear-gradient(
           45deg,
           transparent,
-          transparent 35px,
-          rgba(59, 130, 246, 0.08) 35px,
-          rgba(59, 130, 246, 0.08) 70px
+          transparent 25px,
+          rgba(59, 130, 246, 0.12) 25px,
+          rgba(59, 130, 246, 0.12) 50px
         );
     }
 
@@ -148,7 +146,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 100%);
+      background: linear-gradient(180deg, rgba(248,250,252,0) 0%, rgba(248,250,252,0.7) 100%);
       pointer-events: none;
     }
 
@@ -165,8 +163,8 @@
       right: 0;
       bottom: 0;
       background: 
-        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
       pointer-events: none;
     }
 
@@ -175,9 +173,9 @@
     }
 
     .opt4 .badge {
-      background: rgba(255, 255, 255, 0.2) !important;
+      background: rgba(255, 255, 255, 0.25) !important;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3) !important;
+      border: 1px solid rgba(255, 255, 255, 0.4) !important;
       color: white !important;
     }
 
@@ -188,9 +186,9 @@
       background-clip: text;
     }
 
-    /* Optie 5: Animated Dots MET ZICHTBARE ANIMATIE */
+    /* Optie 5: Animated Dots - VEEL ZICHTBAARDER */
     .opt5 {
-      background: #ffffff;
+      background: #f8fafc;
     }
 
     .opt5::before {
@@ -200,10 +198,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-image: radial-gradient(circle, #3b82f6 2px, transparent 2px);
-      background-size: 40px 40px;
-      opacity: 0.15;
-      animation: moveDots 15s linear infinite;
+      background-image: radial-gradient(circle, #3b82f6 2.5px, transparent 2.5px);
+      background-size: 35px 35px;
+      opacity: 0.18;
+      animation: moveDots 12s linear infinite;
       pointer-events: none;
     }
 
@@ -214,7 +212,7 @@
       left: 0;
       right: 0;
       height: 150px;
-      background: linear-gradient(180deg, transparent 0%, #ffffff 100%);
+      background: linear-gradient(180deg, transparent 0%, #f8fafc 100%);
       pointer-events: none;
     }
 
@@ -223,7 +221,7 @@
         background-position: 0 0;
       }
       100% { 
-        background-position: 40px 40px;
+        background-position: 35px 35px;
       }
     }
 
@@ -245,6 +243,7 @@
       font-weight: 500;
       color: #0f172a;
       margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     }
 
     .title {
@@ -290,6 +289,12 @@
     .btn-primary {
       background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
       color: white;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
     }
 
     .btn-outline {
@@ -298,12 +303,17 @@
       background: transparent;
     }
 
+    .btn-outline:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
     .stats {
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(226, 232, 240, 0.6);
+      border-top: 1px solid rgba(226, 232, 240, 0.8);
     }
 
     .stat {
@@ -325,26 +335,6 @@
       margin-top: 0.2rem;
     }
 
-    /* Animatie indicatoren */
-    .animation-indicator {
-      position: absolute;
-      top: 0.5rem;
-      right: 0.5rem;
-      background: rgba(34, 197, 94, 0.9);
-      color: white;
-      padding: 0.25rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      z-index: 100;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.7; }
-    }
-
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: 1fr;
@@ -353,16 +343,15 @@
   </style>
 </head>
 <body>
-  <h1>🎨 Hero Background Vergelijking</h1>
-  <p class="subtitle">Let op de animaties! (Groene badges tonen geanimeerde opties)</p>
+  <h1>🎨 Hero Background Opties</h1>
+  <p class="subtitle">Geoptimaliseerd voor perfecte zichtbaarheid</p>
 
   <div class="grid">
     
     <!-- Optie 1 -->
     <div class="option">
-      <div class="option-title">Optie 1: Subtiele Gradient</div>
+      <div class="option-title">Optie 1: Subtiele Gradient met Zweefeffecten</div>
       <div class="hero opt1">
-        <div class="animation-indicator">🎬 ANIMATED</div>
         <div class="content">
           <div class="badge">💼 6 Krachtige Apps</div>
           <h2 class="title">
@@ -370,7 +359,7 @@
             <span class="gradient-text">bij jou passen</span>
           </h2>
           <p class="description">
-            Gebruik individuele apps of combineer ze.
+            Gebruik individuele apps of combineer ze in de Corevia Suite.
           </p>
           <div class="buttons">
             <button class="btn btn-primary">Bekijk apps</button>
@@ -405,7 +394,7 @@
             <span class="gradient-text">bij jou passen</span>
           </h2>
           <p class="description">
-            Gebruik individuele apps of combineer ze.
+            Gebruik individuele apps of combineer ze in de Corevia Suite.
           </p>
           <div class="buttons">
             <button class="btn btn-primary">Bekijk apps</button>
@@ -440,7 +429,7 @@
             <span class="gradient-text">bij jou passen</span>
           </h2>
           <p class="description">
-            Gebruik individuele apps of combineer ze.
+            Gebruik individuele apps of combineer ze in de Corevia Suite.
           </p>
           <div class="buttons">
             <button class="btn btn-primary">Bekijk apps</button>
@@ -475,7 +464,7 @@
             <span class="gradient-text">bij jou passen</span>
           </h2>
           <p class="description">
-            Gebruik individuele apps of combineer ze.
+            Gebruik individuele apps of combineer ze in de Corevia Suite.
           </p>
           <div class="buttons">
             <button class="btn btn-primary">Bekijk apps</button>
@@ -503,7 +492,6 @@
     <div class="option">
       <div class="option-title">Optie 5: Animated Dots</div>
       <div class="hero opt5">
-        <div class="animation-indicator">🎬 ANIMATED</div>
         <div class="content">
           <div class="badge">💼 6 Krachtige Apps</div>
           <h2 class="title">
@@ -511,7 +499,7 @@
             <span class="gradient-text">bij jou passen</span>
           </h2>
           <p class="description">
-            Gebruik individuele apps of combineer ze.
+            Gebruik individuele apps of combineer ze in de Corevia Suite.
           </p>
           <div class="buttons">
             <button class="btn btn-primary">Bekijk apps</button>
