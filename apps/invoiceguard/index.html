@@ -1,1 +1,199 @@
 
+<!DOCTYPE html>
+<html lang="nl" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InvoiceGuard - Corevia Software</title>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <div class="logo">
+      <a href="../../index.html">
+        <span class="logo-gradient">Corevia</span>
+      </a>
+    </div>
+
+    <nav>
+      <a href="../../index.html" class="nav-link">Home</a>
+      <a href="../../apps/index.html" class="nav-link">Apps</a>
+      <a href="#" class="nav-link">Suite</a>
+    </nav>
+
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      🌙
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- APP HERO -->
+  <section class="app-hero">
+    <div class="app-hero-background"></div>
+    <div class="container app-hero-content">
+      <div class="app-breadcrumb">
+        <a href="../../index.html">Home</a>
+        <span>/</span>
+        <a href="../../apps/index.html">Apps</a>
+        <span>/</span>
+        <span>InvoiceGuard</span>
+      </div>
+
+      <div class="app-hero-main">
+        <div class="app-hero-info">
+          <div class="app-hero-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="9" y1="13" x2="15" y2="13"/>
+              <line x1="9" y1="17" x2="15" y2="17"/>
+            </svg>
+          </div>
+
+          <h1>InvoiceGuard</h1>
+          <p class="app-hero-tagline">
+            Slim factuurbeheer met controle, validatie en beveiliging.
+            Voorkom fouten en misbruik vóór verzending.
+          </p>
+
+          <div class="app-hero-meta">
+            <div class="meta-item">
+              <span class="meta-label">Categorie</span>
+              <span class="meta-value">Facturatie & Controle</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Prijs</span>
+              <span class="meta-value">€19,99 (eenmalig) | Suite: €39,99 (eenmalig)</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Rating</span>
+              <span class="meta-value">⭐ Nieuw</span>
+            </div>
+          </div>
+
+          <div class="app-hero-actions">
+            <a class="btn primary large" href="InvoiceGuard.html">
+              <span>Start nu gratis</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+            <a class="btn outline large" href="#features">Meer informatie</a>
+          </div>
+        </div>
+
+        <div class="app-hero-visual">
+          <div class="visual-card">
+            <div class="visual-header">
+              <div class="visual-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="visual-title">Invoice Validatie Dashboard</span>
+            </div>
+            <div class="visual-screenshot-wrapper">
+              <img src="assets/invoiceguard-preview.png" alt="InvoiceGuard Interface" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="app-features-section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <h2>Volledige factuurcontrole</h2>
+        <p>Controleer facturen vóór verzending en voorkom problemen achteraf.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature-card">
+          <h3>BTW-validatie</h3>
+          <p>Automatische controle van BTW-tarieven, totalen en afrondingen.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Factuurnummer checks</h3>
+          <p>Detecteert dubbele of ontbrekende factuurnummers.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Wettelijke vereisten</h3>
+          <p>Controleert verplichte velden volgens Nederlandse regelgeving.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Fraude detectie</h3>
+          <p>Signaleert afwijkende bedragen of ongebruikelijke patronen.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>PDF-analyse</h3>
+          <p>Valideer gegenereerde PDF-facturen vóór verzending.</p>
+        </div>
+
+        <div class="feature-card">
+          <h3>Naadloze integratie</h3>
+          <p>Werkt samen met andere Corevia apps en exporteert rapportages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Probeer 14 dagen gratis</h2>
+        <p>14 dagen gratis testen met maximaal 20 facturen</p>
+      </div>
+
+      <div class="pricing-cards">
+        <div class="pricing-card featured">
+          <h3>InvoiceGuard</h3>
+          <div class="pricing-price">
+            <span class="price-amount">€19,99</span>
+            <span class="price-period">eenmalig</span>
+          </div>
+          <ul class="pricing-features">
+            <li>Onbeperkt facturen</li>
+            <li>BTW & wettelijk checks</li>
+            <li>PDF validatie</li>
+            <li>Lokale opslag</li>
+            <li>Gratis updates</li>
+            <li>E-mail ondersteuning</li>
+          </ul>
+          <a class="btn primary large btn-full" href="InvoiceGuard.html">
+            Start gratis proefperiode
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Verzend facturen met vertrouwen</h2>
+      <p>Elke factuur gecontroleerd vóór verzending</p>
+      <a class="btn primary large" href="InvoiceGuard.html">Start nu gratis</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    © 2026 Corevia Software. Alle rechten voorbehouden.
+  </div>
+</footer>
+
+</body>
+</html>
