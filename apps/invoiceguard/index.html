@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl" data-theme="light">
 <head>
@@ -45,13 +44,11 @@
 
       <div class="app-hero-main">
         <div class="app-hero-info">
-          <div class="app-hero-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <polyline points="14 2 14 8 20 8"/>
-              <line x1="9" y1="13" x2="15" y2="13"/>
-              <line x1="9" y1="17" x2="15" y2="17"/>
-            </svg>
+          <div class="app-hero-icon" style="background: transparent; box-shadow: none; width: 100px; height: 100px;">
+            <img 
+              src="assets/invoiceguard-logo.png"
+              alt="InvoiceGuard Logo"
+              style="width: 100%; height: 100%; object-fit: contain;">
           </div>
 
           <h1>InvoiceGuard</h1>
@@ -115,33 +112,119 @@
 
       <div class="grid-3">
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+          </div>
           <h3>BTW-validatie</h3>
           <p>Automatische controle van BTW-tarieven, totalen en afrondingen.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+          </div>
           <h3>Factuurnummer checks</h3>
           <p>Detecteert dubbele of ontbrekende factuurnummers.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+          </div>
           <h3>Wettelijke vereisten</h3>
           <p>Controleert verplichte velden volgens Nederlandse regelgeving.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+            </div>
+          </div>
           <h3>Fraude detectie</h3>
           <p>Signaleert afwijkende bedragen of ongebruikelijke patronen.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 15h6"/>
+              </svg>
+            </div>
+          </div>
           <h3>PDF-analyse</h3>
           <p>Valideer gegenereerde PDF-facturen vóór verzending.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+          </div>
           <h3>Naadloze integratie</h3>
           <p>Werkt samen met andere Corevia apps en exporteert rapportages.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>Zo werkt het</h2>
+        <p>In 4 stappen naar gevalideerde facturen</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Factuur importeren</h3>
+          <p>Upload PDF of laad uit BTW-Aangifte Helper</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Automatische controle</h3>
+          <p>InvoiceGuard valideert alle velden</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Bekijk resultaten</h3>
+          <p>Overzicht van fouten en waarschuwingen</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Corrigeer & verzend</h3>
+          <p>Los problemen op en verstuur met vertrouwen</p>
         </div>
       </div>
     </div>
@@ -157,22 +240,162 @@
 
       <div class="pricing-cards">
         <div class="pricing-card featured">
-          <h3>InvoiceGuard</h3>
-          <div class="pricing-price">
-            <span class="price-amount">€19,99</span>
-            <span class="price-period">eenmalig</span>
+          <div class="pricing-badge">Populair</div>
+          <div class="pricing-header">
+            <h3>InvoiceGuard</h3>
+            <div class="pricing-price">
+              <span class="price-amount">€19,99</span>
+              <span class="price-period">eenmalig</span>
+            </div>
+            <div class="pricing-trial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              14 dagen gratis proberen
+            </div>
           </div>
           <ul class="pricing-features">
-            <li>Onbeperkt facturen</li>
-            <li>BTW & wettelijk checks</li>
+            <li><strong>Onbeperkt facturen</strong></li>
+            <li>BTW & wettelijke checks</li>
             <li>PDF validatie</li>
+            <li>Fraude detectie</li>
             <li>Lokale opslag</li>
             <li>Gratis updates</li>
             <li>E-mail ondersteuning</li>
           </ul>
           <a class="btn primary large btn-full" href="InvoiceGuard.html">
             Start gratis proefperiode
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Corevia Suite</h3>
+            <div class="pricing-price">
+              <span class="price-amount">€39,99</span>
+              <span class="price-period">eenmalig</span>
+            </div>
+            <div class="pricing-trial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              14 dagen gratis proberen
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>BTW-Aangifte Helper</li>
+            <li>Urenregistratie</li>
+            <li>Ritten & Kilometerregistratie</li>
+            <li>ContractGuard</li>
+            <li>InvoiceGuard</li>
+            <li>Document Scanner AI</li>
+            <li>Prioriteit ondersteuning</li>
+            <li><strong>Bespaar met de alles in 1 suite</strong></li>
+          </ul>
+          <a class="btn outline large btn-full" href="#">
+            Bekijk Suite
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Veelgestelde vragen</h2>
+        <p>Alles wat je moet weten over InvoiceGuard</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Welke controles voert InvoiceGuard uit?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>BTW-berekeningen, verplichte velden, factuurnummer-sequenties, datum validaties en afwijkende bedragen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Werkt dit met mijn bestaande facturen?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja! Importeer PDF's of gebruik integratie met BTW-Aangifte Helper voor automatische validatie.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Detecteert InvoiceGuard fraude?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>InvoiceGuard signaleert ongebruikelijke patronen zoals afwijkende bedragen of dubbele facturen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Werkt dit offline?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja! Alle validaties worden lokaal uitgevoerd. Alleen voor licentie-activatie is internet nodig.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Kan ik rapporten exporteren?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja, exporteer validatie-rapporten als PDF of CSV voor je administratie of accountant.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Kan ik upgraden naar Suite?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja, upgrade later naar Suite voor toegang tot alle Corevia apps met extra integraties.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -181,9 +404,14 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Verzend facturen met vertrouwen</h2>
-      <p>Elke factuur gecontroleerd vóór verzending</p>
-      <a class="btn primary large" href="InvoiceGuard.html">Start nu gratis</a>
+      <div class="cta-content">
+        <h2>Klaar om te starten?</h2>
+        <p>Verzend facturen met vertrouwen - elke factuur gecontroleerd vóór verzending</p>
+        <div class="cta-actions">
+          <a class="btn primary large" href="InvoiceGuard.html">Start nu gratis</a>
+          <a class="btn outline large" href="../../apps/index.html">Bekijk alle apps</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -219,6 +447,80 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  // Theme switcher
+  let currentTheme = root.getAttribute("data-theme") || "light";
+  toggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+
+  toggle.addEventListener("click", () => {
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", currentTheme);
+    toggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && href.length > 1) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all items
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.pointerEvents = 'auto';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.feature-card, .step-card, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.pointerEvents = 'auto';
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
