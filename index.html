@@ -335,14 +335,15 @@
     rootMargin: '0px 0px -50px 0px'
   };
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, observerOptions);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      entry.target.style.pointerEvents = 'auto'; // ← VOEG DEZE TOE
+    }
+  });
+}, observerOptions);
 
   document.querySelectorAll('.feature-card, .app-card').forEach(el => {
     el.style.opacity = '0';
