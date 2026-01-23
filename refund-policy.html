@@ -53,6 +53,9 @@
       border-radius: 4px;
     }
     .notice-box p {
+      margin-bottom: 0.5rem;
+    }
+    .notice-box p:last-child {
       margin-bottom: 0;
     }
     .warning-box {
@@ -61,6 +64,21 @@
       padding: 1.5rem;
       margin: 1.5rem 0;
       border-radius: 4px;
+    }
+    .warning-box p {
+      margin-bottom: 0.5rem;
+    }
+    .warning-box p:last-child {
+      margin-bottom: 0;
+    }
+    .warning-box ul {
+      margin-top: 0.5rem;
+    }
+    [data-theme="dark"] .legal-page h1 {
+      background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
     [data-theme="dark"] .legal-page h2 {
       color: #e2e8f0;
@@ -79,6 +97,9 @@
     [data-theme="dark"] .warning-box {
       background: #742a2a;
       border-left-color: #f56565;
+    }
+    [data-theme="dark"] .legal-page a {
+      color: #818cf8;
     }
   </style>
 </head>
@@ -146,13 +167,15 @@
   </div>
 
   <h3>3.1 Standaard beleid</h3>
-  <p>In principe zijn <strong>digitale producten niet terugbetaalbaar</strong> na levering, omdat:</p>
+  <p><strong>Voor klanten buiten de EU:</strong> Digitale producten zijn in principe niet terugbetaalbaar na levering, omdat:</p>
   <ul>
     <li>De software direct na aankoop wordt geactiveerd</li>
     <li>U toegang krijgt tot de volledige software en deze kunt downloaden</li>
     <li>U 14 dagen gratis heeft gehad om de software te testen</li>
     <li>De wet Koop op Afstand digitale content uitsluit van het herroepingsrecht</li>
   </ul>
+
+  <p><strong>Voor EU-klanten:</strong> Volgens de EU Consumentenrichtlijn heeft u recht op 14 dagen bedenktijd. Door de software te activeren en te downloaden, stemt u er expliciet mee in dat de levering direct start en vervalt uw herroepingsrecht. Echter, wij bieden alsnog een vrijwillige 14-dagen tevredenheidsgarantie aan.</p>
 
   <h3>3.2 Uitzonderingen - 14 dagen tevredenheidsgarantie</h3>
   <p>Ondanks dat wij wettelijk niet verplicht zijn, bieden wij toch een <strong>14-dagen tevredenheidsgarantie</strong> aan voor nieuwe klanten. U komt in aanmerking voor een volledige terugbetaling als:</p>
@@ -164,14 +187,25 @@
   </ul>
 
   <h3>3.3 Hoe terugbetaling aanvragen</h3>
-  <p>Om een terugbetaling aan te vragen binnen de 14-dagen periode:</p>
+  <p>U kunt op twee manieren een terugbetaling aanvragen:</p>
+
+  <p><strong>Optie 1: Via Paddle (aanbevolen - snelste methode)</strong></p>
+  <ol>
+    <li>Ga naar uw aankoop email van Paddle</li>
+    <li>Klik op <strong>"View Receipt"</strong> of <strong>"Manage Order"</strong></li>
+    <li>Klik op <strong>"Request a Refund"</strong></li>
+    <li>Vul de reden in (optioneel, helpt ons verbeteren)</li>
+    <li>Paddle verwerkt het verzoek automatisch binnen 5-7 werkdagen</li>
+  </ol>
+
+  <p><strong>Optie 2: Via onze support</strong></p>
   <ol>
     <li>Stuur een email naar <strong>support@corevia-software.nl</strong></li>
-    <li>Vermeld uw licentie-key en aankoopdatum</li>
-    <li>Geef kort aan waarom de software niet aan uw verwachtingen voldoet (optioneel, helpt ons verbeteren)</li>
+    <li>Vermeld uw <strong>Paddle Order ID</strong> (te vinden in uw aankoop email)</li>
+    <li>Geef kort aan waarom de software niet aan uw verwachtingen voldoet (optioneel)</li>
     <li>Wij beoordelen uw verzoek binnen 2-3 werkdagen</li>
     <li>Bij goedkeuring wordt uw licentie gedeactiveerd</li>
-    <li>Terugbetaling vindt plaats binnen 5-10 werkdagen via Paddle/Gumroad</li>
+    <li>Terugbetaling vindt plaats binnen 5-10 werkdagen via Paddle</li>
   </ol>
 
   <h3>3.4 Technische problemen</h3>
@@ -237,11 +271,12 @@
   <ul>
     <li><strong>Beoordeling:</strong> 2-3 werkdagen na ontvangst verzoek</li>
     <li><strong>Licentie deactivatie:</strong> direct na goedkeuring</li>
-    <li><strong>Verwerking door payment provider (Paddle/Gumroad):</strong> 5-10 werkdagen</li>
+    <li><strong>Verwerking door Paddle:</strong> 5-10 werkdagen</li>
     <li><strong>Zichtbaar op uw rekening:</strong> 3-5 werkdagen na verwerking (afhankelijk van uw bank)</li>
   </ul>
 
-  <h2>8. Betaalmethode</h2>
+  <h2>8. Betaalmethode en BTW</h2>
+  <h3>8.1 Terugbetaling via dezelfde methode</h3>
   <p>Terugbetalingen worden verwerkt via dezelfde betaalmethode als de oorspronkelijke betaling:</p>
   <ul>
     <li><strong>Creditcard:</strong> terug naar dezelfde kaart</li>
@@ -249,7 +284,63 @@
     <li><strong>iDEAL:</strong> terug naar uw bankrekening</li>
   </ul>
 
-  <h2>9. Licentiedeactivatie</h2>
+  <h3>8.2 BTW/VAT terugbetaling</h3>
+  <p>Alle prijzen zijn exclusief BTW/VAT. Paddle berekent automatisch de juiste BTW op basis van uw locatie tijdens het afrekenen. Bij terugbetalingen wordt ook de betaalde BTW automatisch terugbetaald - u hoeft hier zelf niets voor te doen.</p>
+
+  <h2>9. Betalingsverwerking via Paddle</h2>
+
+  <h3>9.1 Paddle als Payment Processor</h3>
+  <p>Alle betalingen worden veilig verwerkt via onze gecertificeerde payment provider <strong>Paddle.com</strong>. Paddle handelt het volgende voor ons af:</p>
+  <ul>
+    <li>Veilige creditcard, PayPal en iDEAL betalingen</li>
+    <li>Automatische BTW/VAT berekening en afdracht</li>
+    <li>Terugbetalingen en refund processing</li>
+    <li>Fraude preventie en bescherming</li>
+    <li>Facturatie en administratie</li>
+  </ul>
+
+  <h3>9.2 Paddle's eigen voorwaarden</h3>
+  <p>In bepaalde gevallen kan Paddle terugbetalingen verwerken volgens hun eigen terms of wettelijke verplichtingen:</p>
+  <ul>
+    <li>Chargebacks en creditcard disputes</li>
+    <li>Frauduleuze of ongeautoriseerde transacties</li>
+    <li>Wettelijke vereisten in uw jurisdictie</li>
+    <li>Technische fouten in het betalingsproces</li>
+  </ul>
+  <p>Voor volledige details, zie <a href="https://www.paddle.com/legal/terms" target="_blank" rel="noopener">Paddle Terms of Service</a>.</p>
+
+  <h3>9.3 Chargebacks voorkomen</h3>
+  <div class="warning-box">
+    <p><strong>⚠️ BELANGRIJK - Dien geen chargeback in!</strong></p>
+    <p>Als u ontevreden bent of een technisch probleem ervaart, neem dan <strong>eerst contact met ons op</strong> voordat u een chargeback (creditcard dispute) indient bij uw bank.</p>
+    <p><strong>Waarom chargebacks schadelijk zijn:</strong></p>
+    <ul>
+      <li>Kosten ons hoge boetes (€25-50 per chargeback)</li>
+      <li>Leiden tot permanente blokkering van uw account en licenties</li>
+      <li>Kunnen juridische stappen tot gevolg hebben</li>
+      <li>Zijn vaak niet nodig - wij lossen problemen graag op!</li>
+    </ul>
+    <p>Binnen de 14-dagen garantieperiode krijgt u sowieso uw geld terug. Neem contact op via <strong>support@corevia-software.nl</strong> - meestal reageren wij binnen 24 uur!</p>
+  </div>
+
+  <h2>10. EU Consumentenrecht</h2>
+  <h3>10.1 Voor klanten in de Europese Unie</h3>
+  <p>Als u binnen de EU woont, heeft u volgens de EU Consumentenrichtlijn recht op <strong>14 dagen bedenktijd</strong> voor online aankopen.</p>
+
+  <h3>10.2 Herroepingsrecht bij digitale content</h3>
+  <p>Voor digitale content vervalt het herroepingsrecht zodra:</p>
+  <ul>
+    <li>U expliciet toestemming geeft voor directe levering</li>
+    <li>U de software download en activeert</li>
+    <li>De prestatie volledig is uitgevoerd</li>
+  </ul>
+
+  <p>Door het aankopen en activeren van uw licentie geeft u <strong>uitdrukkelijke toestemming</strong> voor directe levering en stemt u ermee in dat het wettelijke herroepingsrecht vervalt.</p>
+
+  <h3>10.3 Ondanks dit bieden wij aan</h3>
+  <p>Ook al vervalt uw wettelijke herroepingsrecht, wij bieden <strong>vrijwillig</strong> een 14-dagen tevredenheidsgarantie aan. Dit is een coulance van onze kant en gaat verder dan de wettelijke verplichting.</p>
+
+  <h2>11. Licentiedeactivatie</h2>
   <p>Bij een terugbetaling:</p>
   <ul>
     <li>Wordt uw licentie-key onmiddellijk gedeactiveerd</li>
@@ -258,29 +349,29 @@
     <li>Worden uw data bewaard gedurende 30 dagen (voor het geval u van gedachten verandert)</li>
   </ul>
 
-  <h2>10. Geschillen</h2>
+  <h2>12. Geschillen</h2>
   <p>Als u het niet eens bent met een beslissing over terugbetaling:</p>
   <ol>
-    <li>Neem eerst contact op met onze klantenservice voor verdere uitleg</li>
+    <li>Neem eerst contact op met onze klantenservice via support@corevia-software.nl voor verdere uitleg</li>
     <li>Als het geschil niet kan worden opgelost, kunt u een formele klacht indienen</li>
     <li>U heeft het recht het geschil voor te leggen aan de Geschillencommissie (indien van toepassing)</li>
   </ol>
 
-  <h2>11. Educatieve en Non-Profit Kortingen</h2>
+  <h2>13. Educatieve en Non-Profit Kortingen</h2>
   <p>Voor licenties aangekocht met educatieve of non-profit kortingen gelden speciale voorwaarden:</p>
   <ul>
     <li>Terugbetalingen zijn alleen mogelijk bij aantoonbare technische problemen</li>
     <li>Misbruik van kortingen (verkeerde informatie) sluit terugbetaling uit</li>
   </ul>
 
-  <h2>12. Wijzigingen in dit Beleid</h2>
-  <p>Wij behouden ons het recht voor dit retourbeleid te wijzigen. Voor bestaande aankopen blijven de voorwaarden gelden die golden op het moment van aankoop.</p>
+  <h2>14. Wijzigingen in dit Beleid</h2>
+  <p>Wij behouden ons het recht voor dit retourbeleid te wijzigen. Wijzigingen worden aangekondigd op deze pagina en treden in werking na publicatie. Voor bestaande aankopen blijven de voorwaarden gelden die golden op het moment van aankoop.</p>
 
-  <h2>13. Contact</h2>
+  <h2>15. Contact</h2>
   <p>Voor vragen over terugbetalingen of om een terugbetaling aan te vragen:</p>
   <p>
     <strong>Email:</strong> support@corevia-software.nl<br>
-    <strong>Onderwerp:</strong> "Terugbetaling verzoek - [uw licentie-key]"<br>
+    <strong>Onderwerp:</strong> "Terugbetaling verzoek - [uw Paddle Order ID]"<br>
     <strong>Reactietijd:</strong> binnen 24 uur op werkdagen<br>
     <strong>Website:</strong> https://corevia-software.nl
   </p>
@@ -290,7 +381,12 @@
   </div>
 
   <div class="notice-box">
-    <p><strong>Samenvatting:</strong> Probeer 14 dagen gratis → Koop alleen als tevreden → 14 dagen terugbetaalgarantie na aankoop → Permanente licentie zonder extra kosten</p>
+    <p><strong>📋 Samenvatting van ons beleid:</strong></p>
+    <p>✅ 14 dagen gratis proberen (geen creditcard vereist)<br>
+    ✅ Eenmalige betaling via veilig Paddle platform<br>
+    ✅ 14 dagen tevredenheidsgarantie na aankoop<br>
+    ✅ Permanente licentie zonder extra kosten<br>
+    ✅ BTW wordt automatisch afgehandeld</p>
   </div>
 </main>
 
