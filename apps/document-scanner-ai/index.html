@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl" data-theme="light">
 <head>
@@ -45,13 +44,11 @@
 
       <div class="app-hero-main">
         <div class="app-hero-info">
-          <div class="app-hero-icon">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <rect x="3" y="4" width="18" height="16" rx="2"/>
-              <line x1="7" y1="8" x2="17" y2="8"/>
-              <line x1="7" y1="12" x2="17" y2="12"/>
-              <line x1="7" y1="16" x2="13" y2="16"/>
-            </svg>
+          <div class="app-hero-icon" style="background: transparent; box-shadow: none; width: 100px; height: 100px;">
+            <img 
+              src="assets/document-scanner-logo.png"
+              alt="Document Scanner AI Logo"
+              style="width: 100%; height: 100%; object-fit: contain;">
           </div>
 
           <h1>Document Scanner AI</h1>
@@ -115,33 +112,122 @@
 
       <div class="grid-3">
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+          </div>
           <h3>OCR & AI-herkenning</h3>
-          <p>Automatische tekst- en veldherkenning uit PDF’s en afbeeldingen.</p>
+          <p>Automatische tekst- en veldherkenning uit PDF's en afbeeldingen.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+            </div>
+          </div>
           <h3>Facturen & bonnetjes</h3>
           <p>Herken bedragen, BTW, leveranciers en datums automatisch.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <path d="M9 15l2 2 4-4"/>
+              </svg>
+            </div>
+          </div>
           <h3>Contract scanning</h3>
           <p>Detecteer looptijden, einddata en kerninformatie uit contracten.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+          </div>
           <h3>Export mogelijkheden</h3>
           <p>Exporteer data naar CSV voor boekhouding of andere Corevia apps.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+            </div>
+          </div>
           <h3>Lokaal & privacy-first</h3>
           <p>Documenten blijven op je eigen computer. Geen cloudopslag.</p>
         </div>
 
         <div class="feature-card">
+          <div class="icon-wrapper">
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+          </div>
           <h3>Offline verwerking</h3>
           <p>AI-modellen draaien lokaal of met gecontroleerde verwerking.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <h2>Zo werkt het</h2>
+        <p>In 4 stappen van papier naar data</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Upload document</h3>
+          <p>PDF, JPG of PNG uploaden</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>AI-analyse</h3>
+          <p>Automatische OCR en veldherkenning</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Controleer resultaat</h3>
+          <p>Bekijk en pas indien nodig aan</p>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h3>Exporteer data</h3>
+          <p>Naar CSV of andere Corevia apps</p>
         </div>
       </div>
     </div>
@@ -157,14 +243,25 @@
 
       <div class="pricing-cards">
         <div class="pricing-card featured">
-          <h3>Document Scanner AI</h3>
-          <div class="pricing-price">
-            <span class="price-amount">€19,99</span>
-            <span class="price-period">eenmalig</span>
+          <div class="pricing-badge">Populair</div>
+          <div class="pricing-header">
+            <h3>Document Scanner AI</h3>
+            <div class="pricing-price">
+              <span class="price-amount">€19,99</span>
+              <span class="price-period">eenmalig</span>
+            </div>
+            <div class="pricing-trial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              14 dagen gratis proberen
+            </div>
           </div>
           <ul class="pricing-features">
-            <li>Onbeperkt documenten</li>
+            <li><strong>Onbeperkt documenten</strong></li>
             <li>OCR & AI-herkenning</li>
+            <li>Facturen, bonnetjes & contracten</li>
             <li>CSV export</li>
             <li>Lokale opslag</li>
             <li>Gratis updates</li>
@@ -172,7 +269,136 @@
           </ul>
           <a class="btn primary large btn-full" href="Document-Scanner-AI.html">
             Start gratis proefperiode
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
           </a>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3>Corevia Suite</h3>
+            <div class="pricing-price">
+              <span class="price-amount">€39,99</span>
+              <span class="price-period">eenmalig</span>
+            </div>
+            <div class="pricing-trial">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+              14 dagen gratis proberen
+            </div>
+          </div>
+          <ul class="pricing-features">
+            <li>BTW-Aangifte Helper</li>
+            <li>Urenregistratie</li>
+            <li>Ritten & Kilometerregistratie</li>
+            <li>ContractGuard</li>
+            <li>InvoiceGuard</li>
+            <li>Document Scanner AI</li>
+            <li>Prioriteit ondersteuning</li>
+            <li><strong>Bespaar met de alles in 1 suite</strong></li>
+          </ul>
+          <a class="btn outline large btn-full" href="#">
+            Bekijk Suite
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Veelgestelde vragen</h2>
+        <p>Alles wat je moet weten over Document Scanner AI</p>
+      </div>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Hoe nauwkeurig is de AI-herkenning?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>De AI heeft een nauwkeurigheid van 95%+ voor duidelijke documenten. Je kunt resultaten altijd controleren en aanpassen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Welke documenttypen worden ondersteund?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>PDF's, JPG, PNG en andere gangbare beeldformaten. Ideaal voor facturen, bonnetjes en contracten.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Wordt mijn data naar de cloud gestuurd?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Nee! Documenten blijven lokaal op je computer. AI-verwerking gebeurt lokaal of via beveiligde verbinding.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Kan ik data exporteren naar mijn boekhouding?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja! Exporteer als CSV of integreer direct met BTW-Aangifte Helper en andere Corevia apps.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Werkt dit offline?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Basis OCR werkt offline. Voor geavanceerde AI-functies is een internetverbinding vereist.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span class="faq-q-text">Kan ik upgraden naar Suite?</span>
+            <span class="faq-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-answer">
+            <p>Ja, upgrade later naar Suite voor toegang tot alle Corevia apps met naadloze integraties.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -181,9 +407,14 @@
   <!-- CTA -->
   <section class="cta-section">
     <div class="container">
-      <h2>Geen handmatig overtypen meer</h2>
-      <p>Laat AI je documenten lezen en verwerken</p>
-      <a class="btn primary large" href="Document-Scanner-AI.html">Start nu gratis</a>
+      <div class="cta-content">
+        <h2>Klaar om te starten?</h2>
+        <p>Geen handmatig overtypen meer - laat AI je documenten lezen en verwerken</p>
+        <div class="cta-actions">
+          <a class="btn primary large" href="Document-Scanner-AI.html">Start nu gratis</a>
+          <a class="btn outline large" href="../../apps/index.html">Bekijk alle apps</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -219,6 +450,80 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+  const root = document.documentElement;
+
+  // Theme switcher
+  let currentTheme = root.getAttribute("data-theme") || "light";
+  toggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+
+  toggle.addEventListener("click", () => {
+    currentTheme = currentTheme === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", currentTheme);
+    toggle.textContent = currentTheme === "dark" ? "☀️" : "🌙";
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && href.length > 1) {
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // FAQ Accordion
+  const faqItems = document.querySelectorAll('.faq-item');
+
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      
+      // Close all items
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+      }
+    });
+  });
+
+  // Scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+        entry.target.style.pointerEvents = 'auto';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.feature-card, .step-card, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    el.style.pointerEvents = 'auto';
+    observer.observe(el);
+  });
+</script>
 
 </body>
 </html>
