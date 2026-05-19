@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Corevia – Software voor kinderopvang en scholen</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1A56FF;
+    --blue-dark: #1240CC;
+    --blue-light: #EEF2FF;
+    --navy: #0D1B3E;
+    --text: #1a1a2e;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --green: #16A34A;
+    --orange: #F59E0B;
+    --red: #EF4444;
+    --white: #ffffff;
+    --bg: #F8FAFF;
+    --radius: 14px;
+    --shadow: 0 4px 24px rgba(26,86,255,0.08);
+    --shadow-lg: 0 12px 48px rgba(26,86,255,0.14);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5 { font-family: 'Sora', sans-serif; }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.94);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 6%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 9px;
+    font-family: 'Sora', sans-serif; font-weight: 700; font-size: 1.2rem;
+    color: var(--text); text-decoration: none;
+  }
+  .nav-logo .logo-icon {
+    width: 34px; height: 34px; background: var(--blue);
+    border-radius: 9px; display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo .logo-icon svg { width: 20px; height: 20px; fill: white; }
+  .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--muted); font-size: 0.93rem; font-weight: 500;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions { display: flex; align-items: center; gap: 12px; }
+  .btn-ghost {
+    padding: 8px 20px; border: 1.5px solid var(--border); border-radius: 8px;
+    font-size: 0.93rem; font-weight: 600; cursor: pointer; background: white;
+    color: var(--text); transition: border-color .2s, background .2s;
+  }
+  .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+  .btn-primary {
+    padding: 9px 22px; background: var(--blue); color: white;
+    border: none; border-radius: 8px; font-size: 0.93rem; font-weight: 600;
+    cursor: pointer; transition: background .2s, transform .15s;
+  }
+  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-1px); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(160deg, #f0f4ff 0%, #ffffff 60%);
+    padding: 80px 6% 72px;
+    display: grid; grid-template-columns: 1fr 1.1fr; gap: 64px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: -120px; right: -120px;
+    width: 520px; height: 520px;
+    background: radial-gradient(circle, rgba(26,86,255,0.07) 0%, transparent 70%);
+    border-radius: 50%; pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    background: var(--blue-light); color: var(--blue);
+    font-size: 0.8rem; font-weight: 600; padding: 5px 13px;
+    border-radius: 20px; margin-bottom: 22px;
+  }
+  .hero-badge span { width: 6px; height: 6px; background: var(--blue); border-radius: 50%; }
+  .hero h1 {
+    font-size: clamp(2rem, 3.5vw, 2.9rem);
+    font-weight: 800; line-height: 1.15;
+    color: var(--navy); margin-bottom: 20px;
+  }
+  .hero h1 em { color: var(--blue); font-style: normal; }
+  .hero p {
+    font-size: 1rem; color: var(--muted); max-width: 420px;
+    margin-bottom: 32px; line-height: 1.75;
+  }
+  .hero-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  .btn-large {
+    padding: 14px 28px; background: var(--blue); color: white;
+    border: none; border-radius: 10px; font-size: 1rem; font-weight: 700;
+    cursor: pointer; transition: background .2s, box-shadow .2s, transform .15s;
+    box-shadow: 0 4px 20px rgba(26,86,255,0.3);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .btn-large:hover { background: var(--blue-dark); box-shadow: 0 6px 28px rgba(26,86,255,0.4); transform: translateY(-2px); }
+  .btn-large small { font-size: 0.77rem; font-weight: 400; opacity: .85; display: block; }
+  .btn-outline-large {
+    padding: 14px 24px; background: white; color: var(--text);
+    border: 1.5px solid var(--border); border-radius: 10px; font-size: 0.95rem; font-weight: 600;
+    cursor: pointer; transition: border-color .2s; display: flex; align-items: center; gap: 9px;
+  }
+  .btn-outline-large:hover { border-color: var(--blue); color: var(--blue); }
+  .play-icon {
+    width: 32px; height: 32px; background: var(--blue-light); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .play-icon::after {
+    content: '';
+    border-left: 10px solid var(--blue); border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent; margin-left: 2px;
+  }
+  .hero-trust {
+    display: flex; gap: 28px; margin-top: 36px; flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.82rem; color: var(--muted); font-weight: 500;
+  }
+  .trust-icon { font-size: 1rem; }
+
+  /* ── DASHBOARD MOCKUP ── */
+  .dashboard-wrap {
+    position: relative;
+    animation: float 4s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .dashboard {
+    background: white;
+    border-radius: 18px;
+    box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0,0,0,0.06);
+    overflow: hidden;
+    font-size: 0.82rem;
+  }
+  .db-topbar {
+    background: var(--navy); color: white; padding: 14px 20px;
+    display: flex; align-items: center; gap: 12px;
+    font-family: 'Sora', sans-serif; font-weight: 700;
+  }
+  .db-topbar .logo-sm {
+    width: 26px; height: 26px; background: var(--blue);
+    border-radius: 6px; display: flex; align-items: center;
+    justify-content: center; font-size: 0.7rem; font-weight: 800;
+  }
+  .db-body { display: flex; }
+  .db-sidebar {
+    width: 140px; background: #111827; padding: 14px 0;
+    flex-shrink: 0;
+  }
+  .db-sidebar-item {
+    padding: 9px 16px; color: #9CA3AF; font-size: 0.78rem;
+    display: flex; align-items: center; gap: 8px; cursor: pointer;
+    transition: background .15s, color .15s;
+  }
+  .db-sidebar-item.active { background: rgba(26,86,255,0.18); color: var(--blue); font-weight: 600; }
+  .db-sidebar-item:hover:not(.active) { color: white; }
+  .db-sidebar-item .dot {
+    width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0;
+  }
+  .db-main { flex: 1; padding: 18px; background: #F9FAFB; }
+  .db-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .db-header h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; }
+  .db-org { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--muted); }
+  .db-avatar { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg,#f59e0b,#ef4444); }
+  .db-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
+  .db-stat {
+    background: white; border-radius: 10px; padding: 12px;
+    border: 1px solid var(--border);
+  }
+  .db-stat .label { font-size: 0.7rem; color: var(--muted); margin-bottom: 4px; }
+  .db-stat .val { font-size: 1.3rem; font-weight: 700; font-family: 'Sora', sans-serif; }
+  .db-stat .sub { font-size: 0.68rem; color: var(--muted); }
+  .val.blue { color: var(--blue); }
+  .val.orange { color: var(--orange); }
+  .db-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .db-card {
+    background: white; border-radius: 10px; padding: 12px;
+    border: 1px solid var(--border);
+  }
+  .db-card h4 { font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; }
+  .cert-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
+  .cert-row:last-child { border-bottom: none; }
+  .cert-name { font-size: 0.7rem; font-weight: 600; }
+  .cert-person { font-size: 0.66rem; color: var(--muted); }
+  .cert-date { font-size: 0.66rem; color: var(--muted); }
+  .badge {
+    font-size: 0.62rem; font-weight: 700; padding: 2px 7px; border-radius: 20px;
+  }
+  .badge.warn { background: #FEF3C7; color: #92400E; }
+  .badge.red { background: #FEE2E2; color: #991B1B; }
+  .donut-wrap { display: flex; align-items: center; gap: 14px; }
+  .donut {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: conic-gradient(var(--blue) 0% 75%, #FCD34D 75% 87%, #E5E7EB 87% 100%);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative;
+  }
+  .donut::after {
+    content: '24'; position: absolute;
+    width: 42px; height: 42px; background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.9rem; font-family: 'Sora', sans-serif;
+  }
+  .legend { font-size: 0.66rem; }
+  .legend li { list-style: none; display: flex; align-items: center; gap: 5px; margin-bottom: 3px; }
+  .legend li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
+  .legend li.l1::before { background: var(--blue); }
+  .legend li.l2::before { background: #FCD34D; }
+  .legend li.l3::before { background: #E5E7EB; }
+
+  /* ── FEATURES STRIP ── */
+  .features {
+    background: var(--bg);
+    padding: 80px 6%;
+    text-align: center;
+  }
+  .section-label {
+    font-size: 0.8rem; font-weight: 700; color: var(--blue);
+    letter-spacing: .1em; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    font-weight: 800; color: var(--navy); margin-bottom: 16px;
+  }
+  .section-sub { font-size: 1rem; color: var(--muted); max-width: 520px; margin: 0 auto 56px; }
+  .features-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px; text-align: left;
+  }
+  .feat-card {
+    background: white; border-radius: var(--radius); padding: 28px 24px;
+    border: 1px solid var(--border);
+    transition: box-shadow .25s, transform .25s;
+  }
+  .feat-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-4px); }
+  .feat-icon {
+    width: 52px; height: 52px; border-radius: 13px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem; margin-bottom: 18px;
+  }
+  .feat-icon.green { background: #DCFCE7; }
+  .feat-icon.blue { background: #DBEAFE; }
+  .feat-icon.orange { background: #FEF3C7; }
+  .feat-icon.purple { background: #EDE9FE; }
+  .feat-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 9px; }
+  .feat-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── HOW IT WORKS ── */
+  .how {
+    padding: 80px 6%;
+    text-align: center;
+  }
+  .steps {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 0;
+    position: relative; max-width: 860px; margin: 0 auto; margin-top: 52px;
+  }
+  .steps::before {
+    content: '';
+    position: absolute; top: 28px; left: calc(16.67% + 20px); right: calc(16.67% + 20px);
+    height: 2px; background: linear-gradient(90deg, var(--blue), #818CF8);
+    z-index: 0;
+  }
+  .step { position: relative; z-index: 1; padding: 0 20px; }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--blue); color: white;
+    font-family: 'Sora', sans-serif; font-weight: 800; font-size: 1.2rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 22px; box-shadow: 0 4px 18px rgba(26,86,255,0.35);
+  }
+  .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 9px; }
+  .step p { font-size: 0.87rem; color: var(--muted); line-height: 1.65; }
+
+  /* ── WHY SECTION ── */
+  .why {
+    background: var(--bg);
+    padding: 80px 6%;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+  }
+  .why-image {
+    border-radius: 20px; overflow: hidden; position: relative;
+    aspect-ratio: 4/3; background: linear-gradient(135deg,#e0e7ff,#f0fdf4);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why-placeholder {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 20px;
+    background: linear-gradient(135deg,#dbeafe 0%,#dcfce7 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 4rem; color: #93C5FD;
+  }
+  .why-float {
+    position: absolute; background: white; border-radius: 12px;
+    padding: 12px 16px; box-shadow: var(--shadow);
+    border: 1px solid var(--border); font-size: 0.8rem;
+  }
+  .why-float.top-right { top: 20px; right: 20px; }
+  .why-float.bot-left { bottom: 20px; left: 20px; }
+  .float-label { font-weight: 700; margin-bottom: 2px; }
+  .float-sub { color: var(--muted); font-size: 0.72rem; }
+  .float-warn { color: var(--orange); font-weight: 600; font-size: 0.75rem; }
+  .why-content h2 { font-size: clamp(1.5rem,2.5vw,2rem); font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+  .why-content > p { color: var(--muted); margin-bottom: 30px; }
+  .why-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .why-col h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 7px; }
+  .why-col h4 .icon-sm { font-size: 1rem; }
+  .why-col ul { list-style: none; }
+  .why-col ul li {
+    font-size: 0.84rem; color: var(--muted); padding: 4px 0;
+    display: flex; align-items: flex-start; gap: 7px;
+  }
+  .why-col ul li::before {
+    content: '✓'; color: var(--blue); font-weight: 700;
+    font-size: 0.8rem; flex-shrink: 0; margin-top: 1px;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    margin: 0 6% 80px;
+    background: linear-gradient(135deg, var(--navy) 0%, #1A40AA 100%);
+    border-radius: 24px; padding: 56px 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 40px; flex-wrap: wrap;
+    position: relative; overflow: hidden;
+  }
+  .cta-banner::before {
+    content: '';
+    position: absolute; right: -80px; top: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .cta-cal { display: flex; align-items: center; gap: 20px; }
+  .cal-icon {
+    width: 72px; height: 72px; background: rgba(255,255,255,0.12);
+    border-radius: 16px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; flex-shrink: 0;
+    color: white; font-family: 'Sora', sans-serif;
+  }
+  .cal-icon .cal-num { font-size: 2rem; font-weight: 800; line-height: 1; }
+  .cal-icon .cal-label { font-size: 0.6rem; font-weight: 600; opacity: .7; text-transform: uppercase; }
+  .cta-text h2 { font-size: 1.4rem; color: white; font-weight: 800; margin-bottom: 6px; }
+  .cta-text p { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+  .cta-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; }
+  .btn-white {
+    padding: 14px 28px; background: white; color: var(--blue);
+    border: none; border-radius: 10px; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; display: flex; align-items: center; gap: 8px;
+    transition: box-shadow .2s, transform .15s; box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  }
+  .btn-white:hover { box-shadow: 0 6px 28px rgba(0,0,0,0.22); transform: translateY(-2px); }
+  .cta-note { color: rgba(255,255,255,0.55); font-size: 0.78rem; display: flex; align-items: center; gap: 5px; }
+  .cta-note::before { content: '✓'; color: rgba(255,255,255,0.6); }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    padding: 40px 6%;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 24px; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  }
+  .trust-item-full {
+    display: flex; align-items: flex-start; gap: 14px;
+  }
+  .trust-item-full .t-icon {
+    width: 40px; height: 40px; background: var(--blue-light);
+    border-radius: 10px; display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; flex-shrink: 0;
+  }
+  .trust-item-full h4 { font-size: 0.87rem; font-weight: 700; margin-bottom: 3px; }
+  .trust-item-full p { font-size: 0.78rem; color: var(--muted); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); color: white;
+    padding: 56px 6% 32px;
+  }
+  .footer-top {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+    gap: 40px; margin-bottom: 48px;
+  }
+  .footer-brand p { color: rgba(255,255,255,0.55); font-size: 0.84rem; margin-top: 14px; line-height: 1.65; max-width: 220px; }
+  .footer-col h4 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,0.5); margin-bottom: 14px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 9px; }
+  .footer-col ul a { color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.87rem; transition: color .2s; }
+  .footer-col ul a:hover { color: white; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; }
+  .footer-logo { display: flex; align-items: center; gap: 9px; font-family: 'Sora', sans-serif; font-weight: 700; color: white; }
+  .footer-socials { display: flex; gap: 10px; }
+  .social-btn {
+    width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.1);
+    display: flex; align-items: center; justify-content: center; font-size: 0.85rem;
+    color: white; text-decoration: none; transition: background .2s;
+  }
+  .social-btn:hover { background: var(--blue); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-up { animation: fadeUp .6s ease both; }
+  .delay-1 { animation-delay: .1s; }
+  .delay-2 { animation-delay: .2s; }
+  .delay-3 { animation-delay: .3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero, .why { grid-template-columns: 1fr; }
+    .dashboard-wrap { display: none; }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .steps::before { display: none; }
+    .steps { grid-template-columns: 1fr; }
+    .cta-banner { flex-direction: column; padding: 40px 32px; }
+    .cta-actions { align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">
+    <span class="logo-icon">
+      <svg viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 9.5c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.96 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg>
+    </span>
+    Corevia
+  </a>
+  <ul class="nav-links">
+    <li><a href="#">Product</a></li>
+    <li><a href="#">Voor wie</a></li>
+    <li><a href="#">Functies</a></li>
+    <li><a href="#">Prijzen</a></li>
+    <li><a href="#">Over ons</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="btn-ghost">Inloggen</button>
+    <button class="btn-primary">Start gratis proefperiode</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-badge fade-up"><span></span>Software voor kinderopvang en scholen</div>
+    <h1 class="fade-up delay-1">Eenvoudig beheer,<br>meer tijd voor wat<br><em>echt belangrijk</em> is</h1>
+    <p class="fade-up delay-2">Houd certificaten, personeel, aanwezigheid en communicatie overzichtelijk op één plek. Werk lokaal of verbind met ouders – jij kiest.</p>
+    <div class="hero-actions fade-up delay-3">
+      <button class="btn-large">
+        <span>
+          Start gratis proefperiode
+          <small>14 dagen gratis uitproberen</small>
+        </span>
+      </button>
+      <button class="btn-outline-large">
+        <span class="play-icon"></span>
+        Bekijk demo &nbsp;2 minuten
+      </button>
+    </div>
+    <div class="hero-trust fade-up delay-3">
+      <div class="trust-item"><span class="trust-icon">🌐</span>Lokaal of online</div>
+      <div class="trust-item"><span class="trust-icon">🔒</span>Veilig en privé</div>
+      <div class="trust-item"><span class="trust-icon">✅</span>Up-to-date</div>
+      <div class="trust-item"><span class="trust-icon">⚡</span>Eenvoudig in gebruik</div>
+    </div>
+  </div>
+
+  <!-- Dashboard Mockup -->
+  <div class="dashboard-wrap fade-up delay-2">
+    <div class="dashboard">
+      <div class="db-topbar">
+        <div class="logo-sm">C</div>
+        Corevia
+      </div>
+      <div class="db-body">
+        <div class="db-sidebar">
+          <div class="db-sidebar-item active"><span class="dot"></span>Dashboard</div>
+          <div class="db-sidebar-item"><span class="dot"></span>Kinderen</div>
+          <div class="db-sidebar-item"><span class="dot"></span>Personeel</div>
+          <div class="db-sidebar-item"><span class="dot"></span>Certificaten</div>
+          <div class="db-sidebar-item"><span class="dot"></span>Aanwezigheid</div>
+          <div class="db-sidebar-item"><span class="dot"></span>Berichten</div>
+          <div class="db-sidebar-item"><span class="dot"></span>Rapporten</div>
+          <div class="db-sidebar-item"><span class="dot"></span>Instellingen</div>
+        </div>
+        <div class="db-main">
+          <div class="db-header">
+            <h3>Dashboard</h3>
+            <div class="db-org">
+              Kinderopvang De Zon ▾
+              <div class="db-avatar"></div>
+            </div>
+          </div>
+          <div class="db-stats">
+            <div class="db-stat">
+              <div class="label">Kinderen</div>
+              <div class="val blue">32</div>
+              <div class="sub">Aanwezig: 24</div>
+            </div>
+            <div class="db-stat">
+              <div class="label">Personeel</div>
+              <div class="val">12</div>
+              <div class="sub">Actief: 11</div>
+            </div>
+            <div class="db-stat">
+              <div class="label">Certificaten</div>
+              <div class="val orange">3</div>
+              <div class="sub">Verlopen binnenkort</div>
+            </div>
+            <div class="db-stat">
+              <div class="label">Berichten</div>
+              <div class="val">8</div>
+              <div class="sub">Ongelezen</div>
+            </div>
+          </div>
+          <div class="db-grid2">
+            <div class="db-card">
+              <h4>Certificaten die verlopen</h4>
+              <div class="cert-row">
+                <div>
+                  <div class="cert-name">EHBO Certificaat</div>
+                  <div class="cert-person">Marieke de Vries</div>
+                </div>
+                <div>
+                  <div class="cert-date">15-07-2024</div>
+                  <span class="badge warn">Verloopt binnenkort</span>
+                </div>
+              </div>
+              <div class="cert-row">
+                <div>
+                  <div class="cert-name">VOG</div>
+                  <div class="cert-person">Jan Jansen</div>
+                </div>
+                <div>
+                  <div class="cert-date">01-08-2024</div>
+                  <span class="badge warn">Verloopt binnenkort</span>
+                </div>
+              </div>
+              <div class="cert-row">
+                <div>
+                  <div class="cert-name">Kinder-EHBO</div>
+                  <div class="cert-person">Sophie Bakker</div>
+                </div>
+                <div>
+                  <div class="cert-date">10-06-2024</div>
+                  <span class="badge red">Verlopen</span>
+                </div>
+              </div>
+            </div>
+            <div class="db-card">
+              <h4>Aanwezigheid vandaag</h4>
+              <div class="donut-wrap">
+                <div class="donut"></div>
+                <ul class="legend">
+                  <li class="l1">Aanwezig &nbsp;24</li>
+                  <li class="l2">Afwezig &nbsp;6</li>
+                  <li class="l3">Niet bekend &nbsp;2</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-label">Functies</div>
+  <h2 class="section-title">Alles wat je nodig hebt, op één plek</h2>
+  <div class="features-grid">
+    <div class="feat-card">
+      <div class="feat-icon green">📋</div>
+      <h3>Certificaatbeheer</h3>
+      <p>Houd eenvoudig bij welke certificaten geldig zijn en ontvang automatische herinneringen voor verlenging.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon blue">👥</div>
+      <h3>Personeelsbeheer</h3>
+      <p>Alle informatie over je medewerkers overzichtelijk en actueel op één plek.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon orange">💬</div>
+      <h3>Oudercommunicatie</h3>
+      <p>Deel berichten, foto's en updates met ouders wanneer jij dat wilt.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon purple">📊</div>
+      <h3>Overzichten &amp; Rapporten</h3>
+      <p>Genereer rapporten en overzichten met één klik. Altijd up-to-date.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-label">Aan de slag</div>
+  <h2 class="section-title">Zo eenvoudig werkt het</h2>
+  <p class="section-sub" style="max-width:420px;margin:0 auto 0;">Binnen een paar minuten aan de slag.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Account aanmaken</h3>
+      <p>Maak een account aan en kies of je lokaal wilt werken of met ouders.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Gegevens toevoegen</h3>
+      <p>Voeg kinderen, medewerkers en certificaten toe in een paar klikken.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Direct overzicht</h3>
+      <p>Alles netjes op één plek en altijd inzicht in wat belangrijk is.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="why-image">
+    <div class="why-placeholder">👩‍👧‍👦</div>
+    <div class="why-float top-right">
+      <div class="float-label">Certificaat EHBO</div>
+      <div class="float-sub">Geldig tot 15-07-2024 ✅</div>
+    </div>
+    <div class="why-float bot-left">
+      <div class="float-warn">⚠️ Melding</div>
+      <div class="float-sub">3 certificaten verlopen<br>binnen 30 dagen</div>
+    </div>
+  </div>
+  <div class="why-content">
+    <div class="section-label">Jij bepaalt</div>
+    <h2>Jij kiest hoe je werkt</h2>
+    <p>Elke organisatie is anders. Daarom kies jij wat het beste past.</p>
+    <div class="why-cols">
+      <div class="why-col">
+        <h4><span class="icon-sm">🔒</span>Lokaal en veilig</h4>
+        <ul>
+          <li>Data blijft binnen jouw organisatie</li>
+          <li>Geen afhankelijkheid van internet</li>
+          <li>Maximale controle en privacy</li>
+        </ul>
+      </div>
+      <div class="why-col">
+        <h4><span class="icon-sm">👨‍👩‍👧</span>Verbonden met ouders</h4>
+        <ul>
+          <li>Communiceer eenvoudig met ouders</li>
+          <li>Deel berichten en updates</li>
+          <li>Ouders altijd op de hoogte</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <div class="cta-cal">
+    <div class="cal-icon">
+      <div class="cal-num">14</div>
+      <div class="cal-label">dagen</div>
+    </div>
+    <div class="cta-text">
+      <h2>Probeer Corevia 14 dagen gratis</h2>
+      <p>Ontdek zelf hoe eenvoudig het is om overzicht te houden.<br>Geen verplichtingen, annuleren kan altijd.</p>
+    </div>
+  </div>
+  <div class="cta-actions">
+    <button class="btn-white">Start gratis proefperiode →</button>
+    <div class="cta-note">Geen creditcard nodig</div>
+  </div>
+</div>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item-full">
+    <div class="t-icon">🇳🇱</div>
+    <div><h4>Ontwikkeld in Nederland</h4><p>Ondersteuning in jouw taal</p></div>
+  </div>
+  <div class="trust-item-full">
+    <div class="t-icon">🔄</div>
+    <div><h4>Regelmatig updates</h4><p>Altijd nieuwe functies</p></div>
+  </div>
+  <div class="trust-item-full">
+    <div class="t-icon">🛡️</div>
+    <div><h4>Veilig en betrouwbaar</h4><p>Jouw data is in goede handen</p></div>
+  </div>
+  <div class="trust-item-full">
+    <div class="t-icon">💬</div>
+    <div><h4>Persoonlijke support</h4><p>We helpen je graag verder</p></div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <span class="logo-icon" style="background:var(--blue);width:30px;height:30px;border-radius:7px;display:inline-flex;align-items:center;justify-content:center;">
+          <svg width="16" height="16" fill="white" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16A8 8 0 0010 2zm0 3a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm0 9.5c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.96 1.09 6 3.08a7.2 7.2 0 01-6 3.22z"/></svg>
+        </span>
+        Corevia
+      </div>
+      <p>Software die meegroeit met jouw kinderopvang of school.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="#">Functies</a></li>
+        <li><a href="#">Prijzen</a></li>
+        <li><a href="#">Demo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Voor wie</h4>
+      <ul>
+        <li><a href="#">Kinderopvang</a></li>
+        <li><a href="#">Scholen</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Over ons</h4>
+      <ul>
+        <li><a href="#">Over ons</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="#">Privacybeleid</a></li>
+        <li><a href="#">Algemene voorwaarden</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-logo">Corevia</div>
+    <div class="footer-socials">
+      <a href="#" class="social-btn">f</a>
+      <a href="#" class="social-btn">in</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
