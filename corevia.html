@@ -148,86 +148,12 @@
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-10px); }
   }
-  .dashboard {
-    background: white;
+  .dashboard-wrap img {
+    width: 100%;
     border-radius: 18px;
     box-shadow: var(--shadow-lg), 0 0 0 1px rgba(0,0,0,0.06);
-    overflow: hidden;
-    font-size: 0.82rem;
+    display: block;
   }
-  .db-topbar {
-    background: white; color: var(--navy); padding: 10px 16px;
-    display: flex; align-items: center; gap: 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .db-topbar img {
-    height: 26px;
-    width: auto;
-  }
-  .db-body { display: flex; }
-  .db-sidebar {
-    width: 140px; background: #111827; padding: 14px 0;
-    flex-shrink: 0;
-  }
-  .db-sidebar-item {
-    padding: 9px 16px; color: #9CA3AF; font-size: 0.78rem;
-    display: flex; align-items: center; gap: 8px; cursor: pointer;
-    transition: background .15s, color .15s;
-  }
-  .db-sidebar-item.active { background: rgba(26,86,255,0.18); color: var(--blue); font-weight: 600; }
-  .db-sidebar-item:hover:not(.active) { color: white; }
-  .db-sidebar-item .dot {
-    width: 7px; height: 7px; border-radius: 50%; background: currentColor; flex-shrink: 0;
-  }
-  .db-main { flex: 1; padding: 18px; background: #F9FAFB; }
-  .db-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
-  .db-header h3 { font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; }
-  .db-org { display: flex; align-items: center; gap: 7px; font-size: 0.76rem; color: var(--muted); }
-  .db-avatar { width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg,#f59e0b,#ef4444); }
-  .db-stats { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-bottom: 14px; }
-  .db-stat {
-    background: white; border-radius: 10px; padding: 12px;
-    border: 1px solid var(--border);
-  }
-  .db-stat .label { font-size: 0.7rem; color: var(--muted); margin-bottom: 4px; }
-  .db-stat .val { font-size: 1.3rem; font-weight: 700; font-family: 'Sora', sans-serif; }
-  .db-stat .sub { font-size: 0.68rem; color: var(--muted); }
-  .val.blue { color: var(--blue); }
-  .val.orange { color: var(--orange); }
-  .db-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .db-card {
-    background: white; border-radius: 10px; padding: 12px;
-    border: 1px solid var(--border);
-  }
-  .db-card h4 { font-size: 0.75rem; font-weight: 700; margin-bottom: 10px; }
-  .cert-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
-  .cert-row:last-child { border-bottom: none; }
-  .cert-name { font-size: 0.7rem; font-weight: 600; }
-  .cert-person { font-size: 0.66rem; color: var(--muted); }
-  .cert-date { font-size: 0.66rem; color: var(--muted); }
-  .badge {
-    font-size: 0.62rem; font-weight: 700; padding: 2px 7px; border-radius: 20px;
-  }
-  .badge.warn { background: #FEF3C7; color: #92400E; }
-  .badge.red { background: #FEE2E2; color: #991B1B; }
-  .donut-wrap { display: flex; align-items: center; gap: 14px; }
-  .donut {
-    width: 64px; height: 64px; border-radius: 50%;
-    background: conic-gradient(var(--blue) 0% 75%, #FCD34D 75% 87%, #E5E7EB 87% 100%);
-    display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative;
-  }
-  .donut::after {
-    content: '24'; position: absolute;
-    width: 42px; height: 42px; background: white; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-weight: 800; font-size: 0.9rem; font-family: 'Sora', sans-serif;
-  }
-  .legend { font-size: 0.66rem; }
-  .legend li { list-style: none; display: flex; align-items: center; gap: 5px; margin-bottom: 3px; }
-  .legend li::before { content: ''; width: 8px; height: 8px; border-radius: 50%; }
-  .legend li.l1::before { background: var(--blue); }
-  .legend li.l2::before { background: #FCD34D; }
-  .legend li.l3::before { background: #E5E7EB; }
 
   /* ── FEATURES STRIP ── */
   .features {
@@ -483,100 +409,7 @@
 
   <!-- Dashboard Mockup -->
   <div class="dashboard-wrap fade-up delay-2">
-    <div class="dashboard">
-      <div class="db-topbar">
-        <img src="assets/front-logo2.png" alt="Corevia">
-      </div>
-      <div class="db-body">
-        <div class="db-sidebar">
-          <div class="db-sidebar-item active"><span class="dot"></span>Dashboard</div>
-          <div class="db-sidebar-item"><span class="dot"></span>Kinderen</div>
-          <div class="db-sidebar-item"><span class="dot"></span>Personeel</div>
-          <div class="db-sidebar-item"><span class="dot"></span>Certificaten</div>
-          <div class="db-sidebar-item"><span class="dot"></span>Aanwezigheid</div>
-          <div class="db-sidebar-item"><span class="dot"></span>Berichten</div>
-          <div class="db-sidebar-item"><span class="dot"></span>Rapporten</div>
-          <div class="db-sidebar-item"><span class="dot"></span>Instellingen</div>
-        </div>
-        <div class="db-main">
-          <div class="db-header">
-            <h3>Dashboard</h3>
-            <div class="db-org">
-              Kinderopvang De Zon ▾
-              <div class="db-avatar"></div>
-            </div>
-          </div>
-          <div class="db-stats">
-            <div class="db-stat">
-              <div class="label">Kinderen</div>
-              <div class="val blue">32</div>
-              <div class="sub">Aanwezig: 24</div>
-            </div>
-            <div class="db-stat">
-              <div class="label">Personeel</div>
-              <div class="val">12</div>
-              <div class="sub">Actief: 11</div>
-            </div>
-            <div class="db-stat">
-              <div class="label">Certificaten</div>
-              <div class="val orange">3</div>
-              <div class="sub">Verlopen binnenkort</div>
-            </div>
-            <div class="db-stat">
-              <div class="label">Berichten</div>
-              <div class="val">8</div>
-              <div class="sub">Ongelezen</div>
-            </div>
-          </div>
-          <div class="db-grid2">
-            <div class="db-card">
-              <h4>Certificaten die verlopen</h4>
-              <div class="cert-row">
-                <div>
-                  <div class="cert-name">EHBO Certificaat</div>
-                  <div class="cert-person">Marieke de Vries</div>
-                </div>
-                <div>
-                  <div class="cert-date">15-07-2024</div>
-                  <span class="badge warn">Verloopt binnenkort</span>
-                </div>
-              </div>
-              <div class="cert-row">
-                <div>
-                  <div class="cert-name">VOG</div>
-                  <div class="cert-person">Jan Jansen</div>
-                </div>
-                <div>
-                  <div class="cert-date">01-08-2024</div>
-                  <span class="badge warn">Verloopt binnenkort</span>
-                </div>
-              </div>
-              <div class="cert-row">
-                <div>
-                  <div class="cert-name">Kinder-EHBO</div>
-                  <div class="cert-person">Sophie Bakker</div>
-                </div>
-                <div>
-                  <div class="cert-date">10-06-2024</div>
-                  <span class="badge red">Verlopen</span>
-                </div>
-              </div>
-            </div>
-            <div class="db-card">
-              <h4>Aanwezigheid vandaag</h4>
-              <div class="donut-wrap">
-                <div class="donut"></div>
-                <ul class="legend">
-                  <li class="l1">Aanwezig &nbsp;24</li>
-                  <li class="l2">Afwezig &nbsp;6</li>
-                  <li class="l3">Niet bekend &nbsp;2</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <img src="assets/Dashboard-New.png" alt="Corevia Dashboard">
   </div>
 </section>
 
